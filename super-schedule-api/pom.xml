@@ -25,11 +25,6 @@
     <dependencies>
 
         <!--业务依赖-->
-        <dependency>
-            <groupId>book-market</groupId>
-            <artifactId>book-market-business</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
 
         <!--架构依赖-->
         <dependency>
