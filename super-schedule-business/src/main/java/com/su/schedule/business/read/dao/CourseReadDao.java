@@ -1,4 +1,4 @@
-package com.su.schedule.business.read;
+package com.su.schedule.business.read.dao;
 
 import java.util.List;
 

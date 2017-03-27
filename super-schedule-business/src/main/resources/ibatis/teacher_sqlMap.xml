@@ -1,9 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
 <sqlMap namespace="teacher_sql_map">
+    <resultMap id="teacher_map" class="com.su.schedule.model.po.Teacher">
+        <result property="id" column="id" jdbcType="INTEGER"></result>
+        <result property="name" column="name" jdbcType="VARCHAR"></result>
+        <result property="level" column="level" jdbcType="VARCHAR"></result>
+    </resultMap>
 
 
+    <select id="query_for_name" parameterClass="java.util.List" resultMap="teacher_map">
+        select id,`name`,`level` from teacher WHERE `name` in
+        <iterate conjunction="," open="(" close=")">
+            #list[]#
+        </iterate>
+        ;
+    </select>
 
-
+    <insert id="insert_teacher" parameterClass="com.su.schedule.model.po.Teacher">
+        insert into teacher (`name`,`level`) VALUES (#name#,#level#)
+        <selectKey keyProperty="id" resultClass="java.lang.Integer">
+            SELECT LAST_INSERT_ID() as id
+        </selectKey>
+        ;
+    </insert>
 
 </sqlMap>

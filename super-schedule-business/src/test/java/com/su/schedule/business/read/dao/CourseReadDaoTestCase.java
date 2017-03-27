@@ -3,8 +3,6 @@ package com.su.schedule.business.read.dao;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.su.schedule.business.read.CourseReadDao;
-
 import junit.framework.Assert;
 import junit.framework.TestCase;
 
