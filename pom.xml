@@ -13,7 +13,7 @@
         <module>super-schedule-api</module>
         <module>super-schedule-spy</module>
         <module>super-schedule-model</module>
-        <module>super-schedule-model</module>
+        <module>super-schedule-client</module>
     </modules>
 
 
