@@ -5,6 +5,15 @@ public class Teacher {
 	private String name;
 	private String level;
 	
+	@Override
+	public String toString(){
+		return "Course{" +
+                "id=" + id +
+                ", name=" + name + '\'' +
+                ", level='" + level + '\'' +
+                '}';
+	}
+	
 	public Integer getId() {
 		return id;
 	}

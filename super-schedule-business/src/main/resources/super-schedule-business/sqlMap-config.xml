@@ -10,5 +10,7 @@
               maxRequests="320"
               maxSessions="100"
               useStatementNamespaces="true"/>
-    <sqlMap resource=""></sqlMap>
+              
+    <sqlMap resource="ibatis/class_sqlMap.xml"/>
+    <sqlMap resource="ibatis/course_sqlMap.xml"/>
 </sqlMapConfig>

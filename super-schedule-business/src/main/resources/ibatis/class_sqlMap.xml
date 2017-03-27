@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="class_sql_map">
+    <resultMap id="class_map" class="com.su.schedule.model.po.Class">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="name" column="name" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <select id="query_buffer_class" parameterClass="Integer" resultMap="class_map">
+        SELECT `id`,`name` FROM class;
+    </select>
+    
+    <insert id="insert_class" parameterClass="java.util.List">
+        insert into class (`id`,`name`) VALUES
+        <iterate conjunction=",">
+            (#list[].id#,#list[].name#)
+        </iterate>
+    </insert>
+</sqlMap> 
