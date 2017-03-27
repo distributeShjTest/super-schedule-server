@@ -7,7 +7,7 @@ import java.util.List;
  */
 public class ClassDetail {
     private String lesson;
-    private int credit;
+    private String credit;
     private String teacherName;
     private String title;
     private List<String> classNames;
@@ -19,7 +19,7 @@ public class ClassDetail {
     public ClassDetail() {
     }
 
-    public ClassDetail(String lesson, int credit, String teacherName, String title, List<String> classNames, String weeks, String sections, String location, String department) {
+    public ClassDetail(String lesson, String credit, String teacherName, String title, List<String> classNames, String weeks, String sections, String location, String department) {
         this.lesson = lesson;
         this.credit = credit;
         this.teacherName = teacherName;
@@ -66,10 +66,11 @@ public class ClassDetail {
         return department != null ? department.equals(that.department) : that.department == null;
     }
 
+
     @Override
     public int hashCode() {
         int result = lesson != null ? lesson.hashCode() : 0;
-        result = 31 * result + credit;
+        result = 31 * result + (credit != null ? credit.hashCode() : 0);
         result = 31 * result + (teacherName != null ? teacherName.hashCode() : 0);
         result = 31 * result + (title != null ? title.hashCode() : 0);
         result = 31 * result + (classNames != null ? classNames.hashCode() : 0);
@@ -88,11 +89,11 @@ public class ClassDetail {
         this.lesson = lesson;
     }
 
-    public int getCredit() {
+    public String getCredit() {
         return credit;
     }
 
-    public void setCredit(int credit) {
+    public void setCredit(String credit) {
         this.credit = credit;
     }
 
