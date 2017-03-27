@@ -3,6 +3,7 @@ package com.su.schedule.spy.connnet.impl;
 import com.su.schedule.model.constants.Constant;
 import com.su.schedule.model.constants.FirstPageParam;
 import com.su.schedule.model.constants.OtherPageParam;
+import com.su.schedule.model.constants.PageHeader;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpPost;
@@ -29,7 +30,7 @@ public class PageParamHeaderSimulate {
             e.printStackTrace();
             return null;
         }
-
+        httpPost.addHeader(PageHeader.FIRST_PAGE_REFERER.getName(),PageHeader.FIRST_PAGE_REFERER.getValue());
 
         return httpPost;
     }
@@ -47,7 +48,7 @@ public class PageParamHeaderSimulate {
             e.printStackTrace();
             return null;
         }
-
+        httpPost.addHeader(PageHeader.OTHER_PAGE_REFERRER.getName(),PageHeader.OTHER_PAGE_REFERRER.getValue());
 
         return httpPost;
     }

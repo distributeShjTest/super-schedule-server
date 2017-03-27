@@ -41,8 +41,14 @@ public class HttpConnect {
 
 
 
-    public String executeRequest(HttpRequestBase httpRequestBase)throws Exception{
-        HttpResponse httpResponse = this.httpClient.execute(httpRequestBase);
+    public String executeRequest(HttpRequestBase httpRequestBase,boolean isNewClient)throws Exception{
+        HttpResponse httpResponse;
+        if(isNewClient){
+            httpResponse = HttpClients.createDefault().execute(httpRequestBase);
+        }else {
+            httpResponse = this.httpClient.execute(httpRequestBase);
+        }
+
         String res = "";
         String temp =null;
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(httpResponse.getEntity().getContent()));

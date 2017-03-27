@@ -20,8 +20,8 @@ public class HttpConnectTestCase extends TestCase {
     public void testExecuteRequest(){
         try {
             this.httpConnect.getCookie();
-            System.out.println(this.httpConnect.executeRequest(this.httpConnect.httpPostSimulate(PageParamHeaderSimulate.getFirstPageRequest())));
-            System.out.println(this.httpConnect.executeRequest(this.httpConnect.httpPostSimulate(PageParamHeaderSimulate.getOtherPageRequest(2))));
+            System.out.println(this.httpConnect.executeRequest(this.httpConnect.httpPostSimulate(PageParamHeaderSimulate.getFirstPageRequest()),true));
+            System.out.println(this.httpConnect.executeRequest(this.httpConnect.httpPostSimulate(PageParamHeaderSimulate.getOtherPageRequest(2)),true));
 
         }catch (Exception e){
             e.printStackTrace();
