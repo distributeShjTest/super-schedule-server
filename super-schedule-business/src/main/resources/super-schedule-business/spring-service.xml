@@ -23,8 +23,8 @@
         <property name="ignoreUnresolvablePlaceholders" value="true"/>
         <property name="locations">
             <list>
-                <value>file:${global.config.path}/book-market/book-market-business/jdbc.write.properties</value>
-                <value>file:${global.config.path}/book-market/book-market-business/jdbc.read.properties</value>
+                <value>file:${global.config.path}/super-schedule/super-schedule-business/jdbc.write.properties</value>
+                <value>file:${global.config.path}/super-schedule/super-schedule-business/jdbc.read.properties</value>
             </list>
         </property>
     </bean>
@@ -169,7 +169,7 @@
     </tx:advice>
 
     <aop:config proxy-target-class="true">
-        <aop:pointcut id="myPointCut" expression="execution(* com.book.market.business.write.manage.*.*(..))"/>
+        <aop:pointcut id="myPointCut" expression="(execution(* com.su.schedule.business.write.manage.*.*(..))) or (execution(* com.su.schedule.business.write.dao.*.*(..)))"/>
         <aop:advisor advice-ref="txAdvice" pointcut-ref="myPointCut"/>
     </aop:config>
 
