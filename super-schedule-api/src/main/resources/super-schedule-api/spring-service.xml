@@ -12,7 +12,12 @@
 		http://www.springframework.org/schema/context 
 		http://www.springframework.org/schema/context/spring-context-3.2.xsd">
 
-	<import resource="classpath*:book-market-business/spring-service.xml" />
+	<import resource="classpath*:super-schedule-business/spring-service.xml" />
+	<!--启用扫描-->
+	<context:component-scan base-package="com.su.schedule.api"></context:component-scan>
+
+	<!-- 启用注解-->
+	<context:annotation-config/>
 	<!--<bean id="configProperties"  class="org.springframework.beans.factory.config.PropertiesFactoryBean ">-->
 		<!--<property name="locations">-->
 			<!--<array>-->
