@@ -3,7 +3,7 @@ package com.su.schedule.model.po;
 public class DataAccess {
 	private Integer id;
 	private Integer weekNo;
-	private Integer lessonNo;
+	private String lessonNo;
 	private String className;
 	private String period;
 	private String teacherName;
@@ -82,11 +82,11 @@ public class DataAccess {
 		this.weekNo = weekNo;
 	}
 
-	public Integer getLessonNo() {
+	public String getLessonNo() {
 		return lessonNo;
 	}
 
-	public void setLessonNo(Integer lessonNo) {
+	public void setLessonNo(String  lessonNo) {
 		this.lessonNo = lessonNo;
 	}
 
