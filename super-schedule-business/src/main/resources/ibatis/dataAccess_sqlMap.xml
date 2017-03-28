@@ -1,28 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
 <sqlMap namespace="dataAccess_sql_map">
-    <resultMap id="dataAccess_map" class="com.su.schedule.model.po.DataAccess">
-        <result property="id" column="id" jdbcType="INTEGER"/>
-        <result property="weekNo" column="weekNo" jdbcType="INTEGER"/>
-        <result property="lessonNo" column="lessonNo" jdbcType="VARCHAR"/>
-        <result property="className" column="className" jdbcType="VARCHAR"/>
-        <result property="period" column="period" jdbcType="VARCHAR"/>
-        <result property="teacherName" column="teacherName" jdbcType="VARCHAR"/>
-        <result property="courseName" column="courseName" jdbcType="VARCHAR"/>
-    </resultMap>
-    
-    <select id="query_for_combine" parameterClass="java.util.List" resultMap="dataAccess_map">
-    
-    	SELECT weekNo,lessonNo FROM relation
-    	
-        SELECT weekNo,lessonNo,course.name as courseName,class.name as className,teacher.name as teacherName,period 
-		FROM relation,course,teacher,c_r_rel,class
-		WHERE relation_id = relation.id and course_id = course.id and teacher_id = teacher.id and class_id = class.id
-        <iterate conjunction="," open="(" close=")">
-            #list[]#
-        </iterate>
-        ;
-     	
-    </select>
+	<resultMap id="dataAccess_map" class="com.su.schedule.model.po.DataAccess">
+		<result property="id" column="id" jdbcType="INTEGER" />
+		<result property="weekNo" column="week_no" jdbcType="INTEGER" />
+		<result property="courseId" column="course_id" jdbcType="INTEGER" />
+		<result property="teacherId" column="teacher_id" jdbcType="INTEGER" />
+		<result property="lessonNo" column="lesson_no" jdbcType="VARCHAR" />
+		<result property="className" column="className" jdbcType="VARCHAR" />
+		<result property="period" column="period" jdbcType="VARCHAR" />
+		<result property="teacherName" column="teacherName" jdbcType="VARCHAR" />
+		<result property="courseName" column="courseName" jdbcType="VARCHAR" />
+	</resultMap>
+
+	<select id="query_for_combine" parameterClass="java.util.List"
+		resultMap="dataAccess_map">
+
+		SELECT weekNo,lessonNo,course_id,teacher_id FROM relation INNER JOIN
+		(SELECT course.name as courseName, period C)
+		INNER JOIN (SELECT class.name as className FROM class) INNER JOIN (SECLECT
+		teacher.name as teacherName FROM teacher)
+		ON relation_id = relation.id and course_id = course.id and teacher_id =
+		teacher.id and class_id = class.id
+
+		<iterate conjunction="," open="(" close=")">
+			#list[]#
+		</iterate>
+		;
+
+	</select>
 
 </sqlMap>
