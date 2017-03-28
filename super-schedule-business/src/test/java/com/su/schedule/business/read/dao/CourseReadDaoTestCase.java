@@ -17,7 +17,7 @@ public class CourseReadDaoTestCase extends TestCase {
 	}
 	public void testQueryForName(){
 		try {
-			System.out.println(this.courseReadDao.queryForName(Arrays.asList(new String[]{"程序猿","计算机"})));;
+			System.out.println(this.courseReadDao.queryForName(Arrays.asList(new String[]{"程序猿","计算机"})));
 		} catch (Exception e) {
 			e.printStackTrace();
 			Assert.fail();

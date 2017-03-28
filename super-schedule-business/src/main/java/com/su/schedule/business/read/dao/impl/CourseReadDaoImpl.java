@@ -13,10 +13,11 @@ import com.su.schedule.model.po.Course;
 @Repository
 public class CourseReadDaoImpl implements CourseReadDao {
 	@Autowired
-	@Qualifier (value="sqlMapClientRead")
+	@Qualifier(value = "sqlMapClientRead")
 	private SqlMapClient sqlMap;
+
 	public List<Course> queryForName(List<String> courseNames) throws Exception {
-		 return sqlMap.queryForList("course_sql_map.query_for_name",courseNames);
+		return sqlMap.queryForList("course_sql_map.query_for_name", courseNames);
 	}
-	
+
 }

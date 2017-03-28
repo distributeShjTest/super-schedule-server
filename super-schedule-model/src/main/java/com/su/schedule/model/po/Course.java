@@ -3,7 +3,7 @@ package com.su.schedule.model.po;
 public class Course {
 	private Integer id;
 	private String name;
-	private String peroid;
+	private String period;
 	private String score;
 	private Integer departmId;
 	
@@ -13,7 +13,7 @@ public class Course {
 	public Course(Integer id, String name, String peroid, String score, Integer departmId){
 		this.id = id;
 		this.name = name;
-		this.peroid = peroid;
+		this.period = peroid;
 		this.score = score;
 		this.departmId = departmId;
 	}
@@ -23,7 +23,7 @@ public class Course {
 		return "Course{" +
                 "id=" + id +
                 ", name='" + name +'\''+
-                ", period='" + peroid + '\'' +
+                ", period='" + period + '\'' +
                 ", score='" + score + '\'' +
                 ", departmId=" + departmId +
                 '}';
@@ -42,10 +42,10 @@ public class Course {
 		this.name = name;
 	}
 	public String getPeriod() {
-		return peroid;
+		return period;
 	}
 	public void setPeriod(String period) {
-		this.peroid = period;
+		this.period = period;
 	}
 	public String getScore() {
 		return score;

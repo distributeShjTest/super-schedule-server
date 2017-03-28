@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="dataAccess_sql_map">
+    <resultMap id="dataAccess_map" class="com.su.schedule.model.po.DataAccess">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="weekNo" column="weekNo" jdbcType="INTEGER"/>
+        <result property="lessonNo" column="lessonNo" jdbcType="VARCHAR"/>
+        <result property="className" column="className" jdbcType="VARCHAR"/>
+        <result property="period" column="period" jdbcType="VARCHAR"/>
+        <result property="teacherName" column="teacherName" jdbcType="VARCHAR"/>
+        <result property="courseName" column="courseName" jdbcType="VARCHAR"/>
+    </resultMap>
+    
+    <select id="query_for_combine" parameterClass="java.util.List" resultMap="dataAccess_map">
+        SELECT weekNo,lessonNo,course.name as courseName,className,teacher.name as teacherName,period 
+		FROM relation,course,teacher
+		WHERE course_id = course.id and teacher_id = teacher.id 
+        <iterate conjunction="," open="(" close=")">
+            #list[]#
+        </iterate>
+        ;
+     	
+    </select>
+
+</sqlMap>

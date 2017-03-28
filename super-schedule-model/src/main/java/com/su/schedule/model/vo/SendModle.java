@@ -6,7 +6,7 @@ public class SendModle {
 		return "SendModle [tearcher=" + tearcher + ", lessonname=" + lessonname + ", department=" + department
 				+ ", major=" + major + ", classname=" + classname + "]";
 	}
-	String tearcher;
+       String tearcher;
        String lessonname;
        String department;
        public String getTearcher() {

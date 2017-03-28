@@ -20,7 +20,7 @@ public class TeacherReadDaoTestCase extends TestCase{
         this.teacherReadDao = (TeacherReadDao) applicationContext.getBean("teacherReadDaoImpl");
     }
 
-    public void   testQueryForName(){
+    public void testQueryForName(){
         try {
             System.out.println(this.teacherReadDao.queryForName(Arrays.asList(new String[]{"宋寒剑"})));;
         }catch (Exception e){
