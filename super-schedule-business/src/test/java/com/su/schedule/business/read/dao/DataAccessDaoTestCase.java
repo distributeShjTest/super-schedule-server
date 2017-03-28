@@ -1,13 +1,14 @@
 package com.su.schedule.business.read.dao;
 
-import java.util.Arrays;
-
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import junit.framework.Assert;
+import com.su.schedule.model.dto.DataSend;
 
-public class DataAccessDaoTestCase {
+import junit.framework.Assert;
+import junit.framework.TestCase;
+
+public class DataAccessDaoTestCase extends TestCase {
 	private DataAccessReadDao dataAccessReadDao;
 	
 	public DataAccessDaoTestCase(){
@@ -17,11 +18,14 @@ public class DataAccessDaoTestCase {
 	}
 	
 	public void testQueryForCombine(){
+		DataSend dataSend = new DataSend();
+		dataSend.setCourseName("油气田开发地质学");
 		try {
-			//System.out.println(this.dataAccessReadDao.queryForCombine(dataSend));
+			System.out.println(this.dataAccessReadDao.queryForCombine(dataSend));
 		} catch (Exception e) {
 			e.printStackTrace();
 			Assert.fail();
 		}
 	}
+	
 }

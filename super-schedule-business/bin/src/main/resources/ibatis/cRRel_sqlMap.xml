@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="cRRel_sql_map">
+    <resultMap id="cRRel_map" class="com.su.schedule.model.po.CRRel">
+        <result property="id" column="id" jdbcType="Interger"></result>
+        <result property="classId" column="class_id" jdbcType="Interger"></result>
+        <result property="relationId" column="relation_id" jdbcType="Integer"></result>
+    </resultMap>
+
+
+    <insert id="insert_cRRel" parameterClass="com.su.schedule.model.po.CRRel">
+
+        insert INTO c_r_rel (`class_id`,`relation_id`) VALUES (#classId#,#relationId#);
+    </insert>
+
+</sqlMap> 

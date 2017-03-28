@@ -17,5 +17,6 @@
     <sqlMap resource="ibatis/department_sqlMap.xml"></sqlMap>
     <sqlMap resource="ibatis/relation_SqlMap.xml"></sqlMap>
     <sqlMap resource="ibatis/cRRel_sqlMap.xml"></sqlMap>
+    <sqlMap resource="ibatis/dataAccess_sqlMap.xml"></sqlMap>
 
 </sqlMapConfig>
