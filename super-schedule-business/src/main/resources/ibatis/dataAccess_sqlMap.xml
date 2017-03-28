@@ -12,9 +12,12 @@
     </resultMap>
     
     <select id="query_for_combine" parameterClass="java.util.List" resultMap="dataAccess_map">
-        SELECT weekNo,lessonNo,course.name as courseName,className,teacher.name as teacherName,period 
-		FROM relation,course,teacher
-		WHERE course_id = course.id and teacher_id = teacher.id 
+    
+    	SELECT weekNo,lessonNo FROM relation
+    	
+        SELECT weekNo,lessonNo,course.name as courseName,class.name as className,teacher.name as teacherName,period 
+		FROM relation,course,teacher,c_r_rel,class
+		WHERE relation_id = relation.id and course_id = course.id and teacher_id = teacher.id and class_id = class.id
         <iterate conjunction="," open="(" close=")">
             #list[]#
         </iterate>

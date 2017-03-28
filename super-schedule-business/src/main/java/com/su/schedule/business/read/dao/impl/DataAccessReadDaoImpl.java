@@ -18,7 +18,6 @@ public class DataAccessReadDaoImpl implements DataAccessReadDao {
 	private SqlMapClient sqlMap;
 
 	public List<DataAccess> queryForCombine(DataSend dataSend) throws Exception {
-		// TODO Auto-generated method stub
 		return sqlMap.queryForList("dataAccess_sql_map.query_for_combine", dataSend);
 	}
 

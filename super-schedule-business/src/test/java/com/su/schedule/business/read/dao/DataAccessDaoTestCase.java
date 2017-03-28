@@ -18,7 +18,7 @@ public class DataAccessDaoTestCase {
 	
 	public void testQueryForCombine(){
 		try {
-			System.out.println(this.dataAccessReadDao.queryForCombine(Arrays.asList(new String[]{"张术根"})));
+			//System.out.println(this.dataAccessReadDao.queryForCombine(dataSend));
 		} catch (Exception e) {
 			e.printStackTrace();
 			Assert.fail();
