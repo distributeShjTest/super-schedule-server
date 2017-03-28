@@ -12,6 +12,7 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.util.CollectionUtils;
 
 import java.lang.reflect.*;
 import java.util.ArrayList;
@@ -28,6 +29,7 @@ public class HtmlResolver {
     private HttpConnect httpConnect;
 //    private final int maxReConnect = 5;
 
+    private boolean isEnd = false;
     private org.apache.log4j.Logger logger = org.apache.log4j.Logger.getLogger(HtmlResolver.class);
     public List<ClassDetail> resolve(int pageNum)throws Exception{
         List<ClassDetail> classDetails = new ArrayList<ClassDetail>();
@@ -50,13 +52,18 @@ public class HtmlResolver {
             }
             classDetails.add(classDetail);
         }
-
+        if(CollectionUtils.isEmpty(classDetails))
+            this.isEnd = true;
 
         return classDetails;
     }
 
 
-    public static void insertClassDetail(ClassDetail target,int index,String value)throws InvocationTargetException,IllegalAccessException{
+    public boolean isEnd() {
+        return isEnd;
+    }
+
+    public static void insertClassDetail(ClassDetail target, int index, String value)throws InvocationTargetException,IllegalAccessException{
         if(target==null)
             return;
         Class cl = target.getClass();
