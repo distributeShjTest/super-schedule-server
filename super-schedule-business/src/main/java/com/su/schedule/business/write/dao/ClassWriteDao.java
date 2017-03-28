@@ -1,4 +1,4 @@
-package com.su.schedule.business.write;
+package com.su.schedule.business.write.dao;
 
 import java.util.List;
 
