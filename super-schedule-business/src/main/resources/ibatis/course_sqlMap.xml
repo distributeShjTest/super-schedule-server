@@ -10,7 +10,7 @@
     </resultMap>
     
     <select id="query_buffer_course" parameterClass="Integer" resultMap="course_map">
-        SELECT `id`,`name`,`period`,`score`,`departm_id` FROM course WHERE departm_id=#departmId#;
+        SELECT `id`,`name`,`period`,`score`,`departm_id` FROM course;
     </select>
     
     <insert id="insert_course" parameterClass="java.util.List">

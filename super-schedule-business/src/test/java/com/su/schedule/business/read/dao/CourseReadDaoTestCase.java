@@ -17,7 +17,7 @@ public class CourseReadDaoTestCase extends TestCase {
 	}
 	public void testQueryBufferCourse(){
 		try {
-			System.out.println(this.courseReadDao.queryBufferCourse(3));
+			System.out.println(this.courseReadDao.queryBufferCourse(2));
 		} catch (Exception e) {
 			e.printStackTrace();
 			Assert.fail();

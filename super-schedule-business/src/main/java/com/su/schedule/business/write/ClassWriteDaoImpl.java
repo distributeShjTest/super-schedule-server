@@ -13,7 +13,7 @@ public class ClassWriteDaoImpl implements ClassWriteDao {
 	@Autowired
 	@Qualifier (value = "sqlMapClientWrite")
 	private SqlMapClient sqlMap;
-	public void insertClass(List<Class> classes) throws Exception {
+	public void insertClass(List<Class> clases) throws Exception {
 		
 	}
 

@@ -3,16 +3,27 @@ package com.su.schedule.model.po;
 public class Course {
 	private Integer id;
 	private String name;
-	private String period;
+	private String peroid;
 	private String score;
 	private Integer departmId;
+	
+	public Course(){
+	}
+	
+	public Course(Integer id, String name, String peroid, String score, Integer departmId){
+		this.id = id;
+		this.name = name;
+		this.peroid = peroid;
+		this.score = score;
+		this.departmId = departmId;
+	}
 	
 	@Override
 	public String toString(){
 		return "Course{" +
                 "id=" + id +
                 ", name='" + name +'\''+
-                ", period='" + period + '\'' +
+                ", period='" + peroid + '\'' +
                 ", score='" + score + '\'' +
                 ", departmId=" + departmId +
                 '}';
@@ -31,10 +42,10 @@ public class Course {
 		this.name = name;
 	}
 	public String getPeriod() {
-		return period;
+		return peroid;
 	}
 	public void setPeriod(String period) {
-		this.period = period;
+		this.peroid = period;
 	}
 	public String getScore() {
 		return score;

@@ -4,6 +4,14 @@ public class Class {
 	private Integer id;
 	private String name;
 	
+	public Class(){
+	}
+	
+	public Class(Integer id, String name){
+		this.id = id;
+		this.name = name;
+	}
+	
 	@Override
 	public String toString(){
 		return "Class{" +
@@ -21,7 +29,7 @@ public class Class {
 	public String getName() {
 		return name;
 	}
-	public void setNo(Integer no) {
+	public void setNname(String name) {
 		this.name = name;
 	}
 
