@@ -140,7 +140,8 @@ public class MainTest extends TestCase{
     public void testReflection(){
         String a = "2";
         String b = "3";
-        System.out.println(a.getClass().equals(String.class));
+        System.out.println(a.equals(null));
+        System.out.println(Float.parseFloat("1"));
     }
 
 
