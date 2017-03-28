@@ -1,7 +1,8 @@
 package com.su.schedule.business.write.dao;
 
-import java.util.List;
+import com.su.schedule.model.po.Class;
 
 public interface ClassWriteDao {
-	void insertClass(List<Class> classes)throws Exception;
+	Integer insertClass(Class cls)throws Exception;
+	
 }

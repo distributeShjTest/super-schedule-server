@@ -15,7 +15,7 @@ public class TeacherReadDaoTestCase extends TestCase{
     private TeacherReadDao teacherReadDao;
 
     public TeacherReadDaoTestCase(){
-        System.setProperty("global.config.path","/Users/shj/dev/env/env-dev");
+        System.setProperty("global.config.path","E:\\git\\mygit\\envConfig\\env-dev");
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("super-schedule-business/spring-service.xml");
         this.teacherReadDao = (TeacherReadDao) applicationContext.getBean("teacherReadDaoImpl");
     }

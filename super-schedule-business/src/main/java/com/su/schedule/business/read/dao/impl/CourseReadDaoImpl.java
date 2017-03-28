@@ -15,8 +15,8 @@ public class CourseReadDaoImpl implements CourseReadDao {
 	@Autowired
 	@Qualifier (value="sqlMapClientRead")
 	private SqlMapClient sqlMap;
-	public List<Course> queryBufferCourse(List<String> courseNames) throws Exception {
-		 return sqlMap.queryForList("course_sql_map.query_buffer_course",courseNames);
+	public List<Course> queryForName(List<String> courseNames) throws Exception {
+		 return sqlMap.queryForList("course_sql_map.query_for_name",courseNames);
 	}
 	
 }

@@ -6,14 +6,19 @@
         <result property="name" column="name" jdbcType="VARCHAR"/>
     </resultMap>
 
-    <select id="query_buffer_class" parameterClass="Integer" resultMap="class_map">
-        SELECT `id`,`name` FROM class;
+    <select id="query_for_name" parameterClass="java.util.List" resultMap="class_map">
+        SELECT id,`name` FROM class WHERE `name` in
+        <iterate conjunction="," open="(" close=")">
+            #list[]#
+        </iterate>
+        ;
     </select>
     
-    <insert id="insert_class" parameterClass="java.util.List">
-        insert into class (`id`,`name`) VALUES
-        <iterate conjunction=",">
-            (#list[].id#,#list[].name#)
-        </iterate>
+    <insert id="insert_class" parameterClass="com.su.schedule.model.po.Class">
+        insert into class (`name`) VALUES (#name#)
+        <selectKey keyProperty="id" resultClass="java.lang.Integer">
+            SELECT LAST_INSERT_ID() as id
+        </selectKey>
+        ;
     </insert>
 </sqlMap> 

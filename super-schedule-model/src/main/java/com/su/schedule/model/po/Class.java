@@ -29,7 +29,7 @@ public class Class {
 	public String getName() {
 		return name;
 	}
-	public void setNname(String name) {
+	public void setName(String name) {
 		this.name = name;
 	}
 

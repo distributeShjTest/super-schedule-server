@@ -15,8 +15,9 @@ public class CourseWriteDaoImpl implements CourseWriteDao {
 	@Autowired
 	@Qualifier (value = "sqlMapClientWrite")
 	private SqlMapClient sqlMap;
-	public void insertCourse(List<Course> courses) throws Exception {
-		
+	
+	public Integer insertCourse(Course course) throws Exception {
+		return (Integer) this.sqlMap.insert("course_sql_map.insert_course",course);
 	}
 	
 }

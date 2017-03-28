@@ -1,7 +1,5 @@
 package com.su.schedule.model.vo;
 
-
-
 import java.io.Serializable;
 import java.util.SimpleTimeZone;
 
@@ -11,23 +9,20 @@ import java.util.SimpleTimeZone;
 
 public class TimeTableModel implements Serializable{
     private int id;
-    private int startnum;
-    private int endnum;
-    private int week;
-    private String starttime=null;
-    private String endtime=null;
-    private String lessonname=null;
-    private String teacher=null;
-    private String mClass=null;
-    private String classroom=null;
-    private String weeknum=null;
+    private int startnum;   //开始的节次
+    private int endnum;     //结束的节次
+    private int week;       //周几
+    private String lessonname; //课程名
+    private String teacher;    //老师
+    private String classroom;  //教室
+    private String weeknum;   //第几周
 
     @Override
     public String toString() {
-        return "TimeTableModel [id=" + id + ", startnum=" + startnum
-                + ", endnum=" + endnum + ", week=" + week + ", starttime="
-                + starttime + ", endtime=" + endtime + ", lessonname=" + lessonname
-                + ", teacher=" + teacher + ", mClass=" + mClass+", classroom=" + classroom
+        return "schedule[id=" + id + ", startnum=" + startnum
+                + ", endnum=" + endnum + ", week=" + week
+                + ", lessonname=" + lessonname
+                + ", teacher=" + teacher + ", classroom=" + classroom
                 + ", weeknum=" + weeknum + "]";
     }
 
@@ -35,16 +30,13 @@ public class TimeTableModel implements Serializable{
 
     }
 
-    public TimeTableModel(int id, int startnum, int endnum, int week,
-                          String starttime, String endtime, String lessonname, String teacher,
+    public TimeTableModel(int id, int startnum, int endnum, int week, String lessonname, String teacher,
                           String classroom, String weeknum) {
         super();
         this.id = id;
         this.startnum = startnum;
         this.endnum = endnum;
         this.week = week;
-        this.starttime = starttime;
-        this.endtime = endtime;
         this.lessonname = lessonname;
         this.teacher = teacher;
         this.classroom = classroom;
@@ -83,22 +75,6 @@ public class TimeTableModel implements Serializable{
         this.week = week;
     }
 
-    public String getStarttime() {
-        return starttime;
-    }
-
-    public void setStarttime(String starttime) {
-        this.starttime = starttime;
-    }
-
-    public String getEndtime() {
-        return endtime;
-    }
-
-    public void setEndtime(String endtime) {
-        this.endtime = endtime;
-    }
-
     public String getLessonname() {
         return lessonname;
     }
@@ -113,14 +89,6 @@ public class TimeTableModel implements Serializable{
 
     public void setTeacher(String teacher) {
         this.teacher = teacher;
-    }
-
-    public String getmClass() {
-        return mClass;
-    }
-
-    public void setmClass(String mClass) {
-        this.mClass = mClass;
     }
 
     public String getClassroom() {

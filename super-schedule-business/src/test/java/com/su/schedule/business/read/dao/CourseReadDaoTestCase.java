@@ -1,5 +1,7 @@
 package com.su.schedule.business.read.dao;
 
+import java.util.Arrays;
+
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -13,9 +15,9 @@ public class CourseReadDaoTestCase extends TestCase {
 		ApplicationContext applicationContext = new ClassPathXmlApplicationContext("classpath:super-schedule-business/spring-service.xml");
 		this.courseReadDao = (CourseReadDao) applicationContext.getBean("courseReadDaoImpl");
 	}
-	public void testQueryBufferCourse(){
+	public void testQueryForName(){
 		try {
-			System.out.println(this.courseReadDao.queryBufferCourse(2));
+			System.out.println(this.courseReadDao.queryForName(Arrays.asList(new String[]{"程序猿","计算机"})));;
 		} catch (Exception e) {
 			e.printStackTrace();
 			Assert.fail();

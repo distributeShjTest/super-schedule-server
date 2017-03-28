@@ -1,6 +1,7 @@
 package com.su.schedule.business.write.dao.impl;
 
 import java.util.List;
+import com.su.schedule.model.po.Class;
 
 import com.su.schedule.business.write.dao.ClassWriteDao;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,8 +15,8 @@ public class ClassWriteDaoImpl implements ClassWriteDao {
 	@Autowired
 	@Qualifier (value = "sqlMapClientWrite")
 	private SqlMapClient sqlMap;
-	public void insertClass(List<Class> clases) throws Exception {
-		
+	public Integer insertClass(Class cls) throws Exception {
+		return (Integer) this.sqlMap.insert("class_sql_map.insert_class",cls);
 	}
 
 }

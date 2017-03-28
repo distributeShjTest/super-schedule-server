@@ -9,15 +9,20 @@
         <result property="departmId" column="departm_id" jdbcType="INTEGER"/>
     </resultMap>
     
-    <select id="query_buffer_course" parameterClass="Integer" resultMap="course_map">
-        SELECT `id`,`name`,`period`,`score`,`departm_id` FROM course;
+    <select id="query_for_name" parameterClass="java.util.List" resultMap="course_map">
+        SELECT id,`name`,`period`,`score`,`departm_id` FROM course WHERE `name` in
+        <iterate conjunction="," open="(" close=")">
+            #list[]#
+        </iterate>
+        ;
     </select>
     
-    <insert id="insert_course" parameterClass="java.util.List">
-        insert into course (`id`,`name`,`period`,`score`,`departm_id`) VALUES
-        <iterate conjunction=",">
-            (#list[].id#,#list[].name#,#list[].period#,#list[].score#,#list[].departm_id#)
-        </iterate>
+    <insert id="insert_course" parameterClass="com.su.schedule.model.po.Course">
+        insert into course (`name`,`period`,`score`,`departm_id`) VALUES (#name#,#period#,#score#,#departmId#)
+        <selectKey keyProperty="id" resultClass="java.lang.Integer">
+            SELECT LAST_INSERT_ID() as id
+        </selectKey>
+        ;
     </insert>
 
 </sqlMap>

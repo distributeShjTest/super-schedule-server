@@ -6,7 +6,6 @@ import java.util.List;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.su.schedule.business.write.CourseWriteDao;
 import com.su.schedule.model.po.Course;
 
 import junit.framework.Assert;
@@ -14,20 +13,22 @@ import junit.framework.TestCase;
 
 public class CourseWriteDaoTestCase extends TestCase {
 	private CourseWriteDao courseWriteDao;
-	
-	public CourseWriteDaoTestCase(){
+
+	public CourseWriteDaoTestCase() {
 		System.setProperty("global.config.path", "E:\\git\\mygit\\envConfig\\env-dev");
-		ApplicationContext applicationContext = new ClassPathXmlApplicationContext("classpath:super-schedule-business/spring-service.xml");
-		this.courseWriteDao = (CourseWriteDao) applicationContext.getBean("classWriteDaoImpl");
+		ApplicationContext applicationContext = new ClassPathXmlApplicationContext(
+				"classpath:super-schedule-business/spring-service.xml");
+		this.courseWriteDao = (CourseWriteDao) applicationContext.getBean("courseWriteDaoImpl");
 	}
-	public void testInsertCourse(){
-		List<Course> courses = new ArrayList<Course>();
-		Course course = new Course(null,"Joe","3-16","4",null);
-		Course course1 = new Course(null,"Heisenberg","3-16","4",null);
-		courses.add(course);
-		courses.add(course1);
+
+	public void testInsertCourse() {
+		Course course = new Course();
+		course.setName("机器学习");
+		course.setPeriod("3-16");
+		course.setScore("4");
+		course.setDepartmId(2);
 		try {
-			this.courseWriteDao.insertCourse(courses);
+			System.out.println(this.courseWriteDao.insertCourse(course));
 		} catch (Exception e) {
 			e.printStackTrace();
 			Assert.fail();

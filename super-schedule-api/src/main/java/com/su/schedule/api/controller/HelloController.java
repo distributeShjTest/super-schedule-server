@@ -18,8 +18,7 @@ import java.util.Map;
 public class HelloController {
 
 
-    @RequestMapping(value = "getHello",consumes = ControllerConstant.APPLICATION_JSON,method = RequestMethod.POST)
-
+    @RequestMapping(value = "/getHello",consumes = ControllerConstant.APPLICATION_JSON,method = RequestMethod.POST)
     public @ResponseBody Object getHello(@RequestBody Map map){
         System.out.println(map);
         map.put("hello","hello");

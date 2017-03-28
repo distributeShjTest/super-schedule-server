@@ -10,15 +10,12 @@
               maxRequests="320"
               maxSessions="100"
               useStatementNamespaces="true"/>
-              
-    <sqlMap resource="ibatis/class_sqlMap.xml"/>
-    <sqlMap resource="ibatis/course_sqlMap.xml"/>
-    <sqlMap resource="ibatis/teacher_sqlMap.xml"></sqlMap>
 
     <sqlMap resource="ibatis/class_sqlMap.xml"/>
     <sqlMap resource="ibatis/course_sqlMap.xml"/>
     <sqlMap resource="ibatis/teacher_sqlMap.xml"></sqlMap>
     <sqlMap resource="ibatis/department_sqlMap.xml"></sqlMap>
     <sqlMap resource="ibatis/relation_SqlMap.xml"></sqlMap>
+    <sqlMap resource="ibatis/cRRel_sqlMap.xml"></sqlMap>
 
 </sqlMapConfig>
