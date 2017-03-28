@@ -20,4 +20,8 @@ public class TeacherReadManageImpl implements TeacherReadManage{
     public List<Teacher> getTeacherByNames(List<String> teacherNames) throws Exception {
         return this.teacherReadDao.queryForName(teacherNames);
     }
+
+    public List<String> getAllTeacherNames() throws Exception {
+        return this.teacherReadDao.queryForAllNames();
+    }
 }

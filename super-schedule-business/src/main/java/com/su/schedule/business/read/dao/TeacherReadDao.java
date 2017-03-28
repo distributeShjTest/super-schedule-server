@@ -9,4 +9,5 @@ import java.util.List;
  */
 public interface TeacherReadDao {
     List<Teacher> queryForName(List<String> list)throws Exception;
+    List<String> queryForAllNames()throws Exception;
 }

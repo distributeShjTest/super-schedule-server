@@ -16,6 +16,10 @@
         ;
     </select>
 
+    <select id="query_for_all_names" resultClass="java.lang.String">
+        SELECT DISTINCT `name` FROM teacher;
+    </select>
+
     <insert id="insert_teacher" parameterClass="com.su.schedule.model.po.Teacher">
         insert into teacher (`name`,`level`) VALUES (#name#,#level#)
         <selectKey keyProperty="id" resultClass="java.lang.Integer">

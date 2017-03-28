@@ -9,7 +9,7 @@ public class Course {
 	
 	public Course(){
 	}
-	
+
 	public Course(Integer id, String name, String peroid, String score, Integer departmId){
 		this.id = id;
 		this.name = name;
@@ -17,7 +17,7 @@ public class Course {
 		this.score = score;
 		this.departmId = departmId;
 	}
-	
+
 	@Override
 	public String toString(){
 		return "Course{" +

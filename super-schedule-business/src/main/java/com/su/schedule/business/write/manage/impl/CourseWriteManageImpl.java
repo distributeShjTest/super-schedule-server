@@ -16,6 +16,6 @@ public class CourseWriteManageImpl implements CourseWriteManage {
     private CourseWriteDao courseWriteDao;
 
     public Integer insertCourseReturnId(Course course) throws Exception {
-        return null;
+        return this.courseWriteDao.insertCourse(course);
     }
 }

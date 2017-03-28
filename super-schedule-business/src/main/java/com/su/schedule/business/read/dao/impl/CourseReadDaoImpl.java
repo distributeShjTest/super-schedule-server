@@ -20,4 +20,7 @@ public class CourseReadDaoImpl implements CourseReadDao {
 		return sqlMap.queryForList("course_sql_map.query_for_name", courseNames);
 	}
 
+	public List<String> quryForAllNames() throws Exception {
+		return sqlMap.queryForList("course_sql_map.query_for_all_names");
+	}
 }
