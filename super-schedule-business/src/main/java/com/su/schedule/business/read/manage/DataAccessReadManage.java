@@ -1,6 +1,7 @@
 package com.su.schedule.business.read.manage;
 
 import com.su.schedule.model.dto.DataSend;
+import com.su.schedule.model.dto.DataSendExtend;
 import com.su.schedule.model.vo.TimeTableModel;
 
 import java.sql.Time;
@@ -11,5 +12,5 @@ import java.util.List;
  */
 public interface DataAccessReadManage {
 
-    public List<TimeTableModel> getTimeTableModels(DataSend dataSend)throws Exception;
+    public List<TimeTableModel> getTimeTableModels(DataSendExtend dataSend)throws Exception;
 }
