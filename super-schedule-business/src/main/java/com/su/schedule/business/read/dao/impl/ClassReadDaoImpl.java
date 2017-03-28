@@ -14,8 +14,8 @@ public class ClassReadDaoImpl implements ClassReadDao {
 	@Autowired
 	@Qualifier (value="sqlMapClientRead")
 	private SqlMapClient sqlMap;
-	public List<Class> queryBufferClass(int id) throws Exception {
-		 return sqlMap.queryForList("class_sql_map.query_buffer_class",id);
+	public List<Class> queryBufferClass(List<String> classNames) throws Exception {
+		 return sqlMap.queryForList("class_sql_map.query_buffer_class",classNames);
 	}
 	
 }
