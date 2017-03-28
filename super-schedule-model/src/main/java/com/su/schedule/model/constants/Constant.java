@@ -9,4 +9,5 @@ public interface Constant {
     static final String COOKIE = "Cookie";
     static final String UTF_8_ENCODING = "UTF-8";
     static final String PAGE_NUM = "PageNum";
+    static final String FULL_WEEK = "1";
 }
