@@ -2,6 +2,7 @@
 <!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
 <sqlMap namespace="cRRel_sql_map">
     <resultMap id="cRRel_map" class="com.su.schedule.model.po.CRRel">
+<<<<<<< HEAD
      <result property="classId" column="class_id" jdbcType="INTEGER"/>
      <result property="relationId" column="relation_id" jdbcType="INTEGER"/>
     </resultMap>
@@ -13,4 +14,17 @@
         </selectKey>
         ;
     </insert>
+=======
+        <result property="id" column="id" jdbcType="Interger"></result>
+        <result property="classId" column="class_id" jdbcType="Interger"></result>
+        <result property="relationId" column="relation_id" jdbcType="Integer"></result>
+    </resultMap>
+
+
+    <insert id="insert_cRRel" parameterClass="com.su.schedule.model.po.CRRel">
+
+        insert INTO crrel (`class_id`,`relation_id`) VALUES (#classId#,#relationId#);
+    </insert>
+
+>>>>>>> e48aac113d6e8602f79ff654eb164bd0a1d83b55
 </sqlMap> 
