@@ -10,11 +10,10 @@ public class DataAccess {
 	private String courseName;
 	private Integer courseId;
 	private Integer teacherId;
-
+	private String buildingName;
 	
 	public DataAccess() {
 	}
-
 
 	@Override
 	public String toString() {
@@ -28,11 +27,13 @@ public class DataAccess {
 				", courseName='" + courseName + '\'' +
 				", courseId=" + courseId +
 				", teacherId=" + teacherId +
+				", buildingName='" + buildingName + '\'' +
 				'}';
 	}
 
 	@Override
 	public boolean equals(Object o) {
+
 		if (this == o) return true;
 		if (o == null || getClass() != o.getClass()) return false;
 
@@ -46,7 +47,8 @@ public class DataAccess {
 		if (teacherName != null ? !teacherName.equals(that.teacherName) : that.teacherName != null) return false;
 		if (courseName != null ? !courseName.equals(that.courseName) : that.courseName != null) return false;
 		if (courseId != null ? !courseId.equals(that.courseId) : that.courseId != null) return false;
-		return teacherId != null ? teacherId.equals(that.teacherId) : that.teacherId == null;
+		if (teacherId != null ? !teacherId.equals(that.teacherId) : that.teacherId != null) return false;
+		return buildingName != null ? buildingName.equals(that.buildingName) : that.buildingName == null;
 	}
 
 	@Override
@@ -60,49 +62,8 @@ public class DataAccess {
 		result = 31 * result + (courseName != null ? courseName.hashCode() : 0);
 		result = 31 * result + (courseId != null ? courseId.hashCode() : 0);
 		result = 31 * result + (teacherId != null ? teacherId.hashCode() : 0);
+		result = 31 * result + (buildingName != null ? buildingName.hashCode() : 0);
 		return result;
-	}
-
-	public String getPeriod() {
-		return period;
-	}
-
-	public void setPeriod(String period) {
-		this.period = period;
-	}
-
-	public String getCourseName() {
-		return courseName;
-	}
-
-	public void setCourseName(String courseName) {
-		this.courseName = courseName;
-	}
-
-	public Integer getCourseId() {
-		return courseId;
-	}
-
-	public void setCourseId(Integer courseId) {
-		this.courseId = courseId;
-	}
-
-	public Integer getTeacherId() {
-		return teacherId;
-	}
-
-	public void setTeacherId(Integer teacherId) {
-		this.teacherId = teacherId;
-	}
-
-	public DataAccess(Integer id, Integer weekNo, Integer lessonNo, String className, String peroid, String teacherName, String buildingName){
-		this.id = id;
-		this.weekNo = weekNo;
-		this.lessonNo = lessonNo;
-		this.className = className;
-		this.period = period;
-		this.teacherName = teacherName;
-		this.courseName = buildingName;
 	}
 
 	public Integer getId() {
@@ -137,12 +98,12 @@ public class DataAccess {
 		this.className = className;
 	}
 
-	public String getPeroid() {
+	public String getPeriod() {
 		return period;
 	}
 
-	public void setPeroid(String peroid) {
-		this.period = peroid;
+	public void setPeriod(String period) {
+		this.period = period;
 	}
 
 	public String getTeacherName() {
@@ -153,12 +114,35 @@ public class DataAccess {
 		this.teacherName = teacherName;
 	}
 
-	public String getBuildingName() {
+	public String getCourseName() {
 		return courseName;
 	}
 
-	public void setBuildingName(String buildingName) {
-		this.courseName = buildingName;
+	public void setCourseName(String courseName) {
+		this.courseName = courseName;
 	}
-	
+
+	public Integer getCourseId() {
+		return courseId;
+	}
+
+	public void setCourseId(Integer courseId) {
+		this.courseId = courseId;
+	}
+
+	public Integer getTeacherId() {
+		return teacherId;
+	}
+
+	public void setTeacherId(Integer teacherId) {
+		this.teacherId = teacherId;
+	}
+
+	public String getBuildingName() {
+		return buildingName;
+	}
+
+	public void setBuildingName(String buildingName) {
+		this.buildingName = buildingName;
+	}
 }
