@@ -15,6 +15,6 @@ public class ClassWriteManageImpl implements ClassWriteManage {
     private ClassWriteDao classWriteDao;
 
     public Integer insertClassReturnId(Class cl) throws Exception {
-        return null;
+        return this.classWriteDao.insertClass(cl);
     }
 }

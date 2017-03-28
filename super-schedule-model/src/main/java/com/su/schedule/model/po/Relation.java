@@ -3,7 +3,7 @@ package com.su.schedule.model.po;
 public class Relation {
 	private Integer id;
 	private Integer weekNo;
-	private Integer lessonNo;
+	private String lessonNo;
 	private String buildingName;
 	private Integer roomNo;
 	private Integer courseId;
@@ -11,27 +11,47 @@ public class Relation {
 	
 	public Relation(){
 	}
-	
+
 	@Override
-	public String toString(){
+	public String toString() {
 		return "Relation{" +
-                "id=" + id +
-                ", weekNo=" + weekNo +
-                ", lessonNo=" + lessonNo +
-                ", buildingName='" + buildingName + '\'' +
-                ", roomNo=" + roomNo +
-                ", courseId=" + courseId +
-                ", teacherId=" + teacherId +
-                '}';
+				"id=" + id +
+				", weekNo=" + weekNo +
+				", lessonNo='" + lessonNo + '\'' +
+				", buildingName='" + buildingName + '\'' +
+				", roomNo=" + roomNo +
+				", courseId=" + courseId +
+				", teacherId=" + teacherId +
+				'}';
 	}
-	
-	public Relation(Integer id,Integer weekNo,Integer lessonNo,String buildingName,Integer roomNo,Integer courseId,Integer teacherId){
-		this.id = id;
-		this.lessonNo = lessonNo;
-		this.buildingName = buildingName;
-		this.roomNo = roomNo;
-		this.courseId = courseId;
-		this.teacherId = teacherId;
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+
+		Relation relation = (Relation) o;
+
+		if (id != null ? !id.equals(relation.id) : relation.id != null) return false;
+		if (weekNo != null ? !weekNo.equals(relation.weekNo) : relation.weekNo != null) return false;
+		if (lessonNo != null ? !lessonNo.equals(relation.lessonNo) : relation.lessonNo != null) return false;
+		if (buildingName != null ? !buildingName.equals(relation.buildingName) : relation.buildingName != null)
+			return false;
+		if (roomNo != null ? !roomNo.equals(relation.roomNo) : relation.roomNo != null) return false;
+		if (courseId != null ? !courseId.equals(relation.courseId) : relation.courseId != null) return false;
+		return teacherId != null ? teacherId.equals(relation.teacherId) : relation.teacherId == null;
+	}
+
+	@Override
+	public int hashCode() {
+		int result = id != null ? id.hashCode() : 0;
+		result = 31 * result + (weekNo != null ? weekNo.hashCode() : 0);
+		result = 31 * result + (lessonNo != null ? lessonNo.hashCode() : 0);
+		result = 31 * result + (buildingName != null ? buildingName.hashCode() : 0);
+		result = 31 * result + (roomNo != null ? roomNo.hashCode() : 0);
+		result = 31 * result + (courseId != null ? courseId.hashCode() : 0);
+		result = 31 * result + (teacherId != null ? teacherId.hashCode() : 0);
+		return result;
 	}
 
 	public Integer getId() {
@@ -41,7 +61,7 @@ public class Relation {
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	
+
 	public Integer getWeekNo() {
 		return weekNo;
 	}
@@ -49,12 +69,12 @@ public class Relation {
 	public void setWeekNo(Integer weekNo) {
 		this.weekNo = weekNo;
 	}
-	
-	public Integer getLessonNo() {
+
+	public String getLessonNo() {
 		return lessonNo;
 	}
 
-	public void setLessonNo(Integer lessonNo) {
+	public void setLessonNo(String lessonNo) {
 		this.lessonNo = lessonNo;
 	}
 
@@ -89,8 +109,5 @@ public class Relation {
 	public void setTeacherId(Integer teacherId) {
 		this.teacherId = teacherId;
 	}
-	
-	
-
 }
 

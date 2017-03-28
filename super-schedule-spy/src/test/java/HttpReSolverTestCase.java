@@ -22,7 +22,6 @@ public class HttpReSolverTestCase extends TestCase{
             HtmlResolver.insertClassDetail(classDetail,13,"location");
             HtmlResolver.insertClassDetail(classDetail,14,"department");
             System.out.println(classDetail);
-
         }catch (Exception e){
             e.printStackTrace();
             Assert.fail();

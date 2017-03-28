@@ -142,6 +142,7 @@ public class MainTest extends TestCase{
         String b = "3";
         System.out.println(a.equals(null));
         System.out.println(Float.parseFloat("1"));
+        System.out.println(Integer.parseInt("02"));
     }
 
 

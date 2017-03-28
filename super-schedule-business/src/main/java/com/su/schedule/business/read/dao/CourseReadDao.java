@@ -6,4 +6,5 @@ import com.su.schedule.model.po.Course;
 
 public interface CourseReadDao {
 	List<Course> queryForName(List<String> courseNames)throws Exception;
+	List<String> quryForAllNames()throws Exception;
 }

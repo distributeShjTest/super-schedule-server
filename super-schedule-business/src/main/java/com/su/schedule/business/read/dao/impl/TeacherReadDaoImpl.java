@@ -24,4 +24,8 @@ public class TeacherReadDaoImpl implements TeacherReadDao {
     public List<Teacher> queryForName(List<String> list) throws Exception {
         return sqlMapClient.queryForList("teacher_sql_map.query_for_name",list);
     }
+
+    public List<String> queryForAllNames() throws Exception {
+        return sqlMapClient.queryForList("teacher_sql_map.query_for_all_names");
+    }
 }

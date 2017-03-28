@@ -16,6 +16,10 @@
         </iterate>
         ;
     </select>
+
+    <select id="query_for_all_names" resultClass="java.lang.String">
+        SELECT DISTINCT `name` FROM course;
+    </select>
     
     <insert id="insert_course" parameterClass="com.su.schedule.model.po.Course">
         insert into course (`name`,`period`,`score`,`departm_id`) VALUES (#name#,#period#,#score#,#departmId#)

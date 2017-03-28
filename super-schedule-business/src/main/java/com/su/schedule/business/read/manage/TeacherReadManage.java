@@ -9,4 +9,5 @@ import java.util.List;
  */
 public interface TeacherReadManage {
     List<Teacher> getTeacherByNames(List<String> teacherNames)throws Exception;
+    List<String> getAllTeacherNames()throws Exception;
 }

@@ -17,6 +17,7 @@ public class CRRelWriteDaoImpl implements CRRelWriteDao{
     private SqlMapClient sqlMap;
 
     public void insertCRRel(CRRel crRel) throws Exception {
-        return;
+
+         this.sqlMap.insert("cRRel_sql_map.insert_cRRel",crRel);
     }
 }

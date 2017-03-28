@@ -20,4 +20,8 @@ public class CourseReadManageImpl implements CourseReadManage{
     public List<Course> getCoursesByNames(List<String> courseNames) throws Exception {
         return this.courseReadDao.queryForName(courseNames);
     }
+
+    public List<String> getAllCourseNames() throws Exception {
+        return this.courseReadDao.quryForAllNames();
+    }
 }

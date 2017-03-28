@@ -6,9 +6,9 @@ public class SendModle {
 		return "SendModle [tearcher=" + tearcher + ", lessonname=" + lessonname + ", department=" + department
 				+ ", major=" + major + ", classname=" + classname + "]";
 	}
-       String tearcher;
-       String lessonname;
-       String department;
+      private String tearcher;
+      private String lessonname;
+      private String department;
        public String getTearcher() {
 		return tearcher;
 	}
@@ -39,6 +39,6 @@ public class SendModle {
 	public void setClassname(String classname) {
 		this.classname = classname;
 	}
-	String major;
-       String classname;
+	private String major;
+	private String classname;
 }
