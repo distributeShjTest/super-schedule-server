@@ -10,12 +10,13 @@
 		<result property="period" column="period" jdbcType="VARCHAR" />
 		<result property="teacherName" column="teacherName" jdbcType="VARCHAR" />
 		<result property="courseName" column="courseName" jdbcType="VARCHAR" />
+		<result property="buildingName" column="building_name" jdbcType="VARCHAR"/>
 	</resultMap>
 
 	<select id="query_for_combine" parameterClass="com.su.schedule.model.dto.DataSend"
 		resultMap="dataAccess_map">
 
-		select relation.week_no,relation.course_id,relation.teacher_id,relation.lesson_no,className,courseName,teacherName,period from relation 
+		select relation.week_no,relation.course_id,relation.teacher_id,relation.lesson_no,className,courseName,teacherName,period,building_name from relation
 			INNER JOIN
 		(SELECT course.name as courseName,course.id,course.period as period FROM course
 		<isNotEmpty prepend=" WHERE " property="courseName">
@@ -25,7 +26,7 @@
 		INNER JOIN
 		(SELECT teacher.`name` as teacherName,teacher.id FROM teacher
 		<isNotEmpty prepend=" WHERE " property="teacherName">
-			teacherName = #teacherName#
+			teacher.name = #teacherName#
 		</isNotEmpty>
 		) as t2 ON t2.id = relation.teacher_id
 		INNER JOIN c_r_rel as t3 ON t3.relation_id = relation.id

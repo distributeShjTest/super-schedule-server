@@ -27,6 +27,7 @@ public class DataAccessReadManageImpl implements DataAccessReadManage{
     private static Logger logger = Logger.getLogger(DataAccessReadManageImpl.class);
 
     public List<TimeTableModel> getTimeTableModels(DataSendExtend dataSend) throws Exception {
+        System.out.println(dataSend);
         if(dataSend.getWeekNum()==null)
             throw new Exception("weekNum count not be null");
         List<DataAccess> dataAccesses = this.dataAccessReadDao.queryForCombine(dataSend);
@@ -72,6 +73,7 @@ public class DataAccessReadManageImpl implements DataAccessReadManage{
     }
 
     private TimeTableModel dataAccessTransfer(DataAccess dataAccess){
+        System.out.println(dataAccess);
         TimeTableModel timeTableModel = new TimeTableModel();
         timeTableModel.setClassroom(dataAccess.getBuildingName());
         timeTableModel.setLessonname(dataAccess.getCourseName());
@@ -85,6 +87,7 @@ public class DataAccessReadManageImpl implements DataAccessReadManage{
             timeTableModel.setStartnum(Integer.parseInt(lessonNo[0]));
             timeTableModel.setEndnum(Integer.parseInt(lessonNo[1]));
         }
+
         return timeTableModel;
     }
 

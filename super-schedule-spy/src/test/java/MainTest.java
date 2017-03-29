@@ -1,3 +1,5 @@
+import com.google.gson.JsonObject;
+import com.su.schedule.model.po.Class;
 import junit.framework.TestCase;
 import org.apache.http.Header;
 import org.apache.http.HttpEntity;
@@ -143,6 +145,10 @@ public class MainTest extends TestCase{
         System.out.println(a.equals(null));
         System.out.println(Float.parseFloat("1"));
         System.out.println(Integer.parseInt("02"));
+        JsonObject jsonObject = new JsonObject();
+        Class cl = new Class();
+        cl.setName("");
+
     }
 
 
