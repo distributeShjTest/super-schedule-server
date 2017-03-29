@@ -11,14 +11,14 @@ import junit.framework.TestCase;
 public class ClassReadDaoTestCase extends TestCase {
 	private ClassReadDao classReadDao;
 	public ClassReadDaoTestCase(){
-		System.setProperty("global.config.path","E:\\git\\mygit\\envConfig\\env-dev");
+		System.setProperty("global.config.path","/Users/shj/dev/env/env-dev");
 		ApplicationContext applicationContext = new ClassPathXmlApplicationContext("classpath:super-schedule-business/spring-service.xml");
 		this.classReadDao = (ClassReadDao) applicationContext.getBean("classReadDaoImpl");
 	}
 	
 	public void testQueryForName(){
 		try {
-			System.out.println(this.classReadDao.queryForName(Arrays.asList(new String[]{"李朋辉"})));
+			System.out.println(this.classReadDao.queryForName(Arrays.asList(new String[]{"城规1501","地物1601"})));
 		} catch (Exception e) {
 			e.printStackTrace();
 			Assert.fail();

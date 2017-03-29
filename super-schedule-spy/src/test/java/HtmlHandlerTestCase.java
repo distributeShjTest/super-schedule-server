@@ -22,8 +22,8 @@ public class HtmlHandlerTestCase extends TestCase{
         System.setProperty("global.config.path","/Users/shj/dev/env/env-dev");
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("super-schedule-spy/spring-service.xml");
         this.htmlHandler = (CsuHandler) applicationContext.getBean("csuHandler");
-        this.htmlResolver = (CsuHtmlResolver)applicationContext.getBean("csuHtmlResolver");
-        this.httpConnect = (CsuHttpConnectImpl)applicationContext.getBean("csuHttpConnectImpl");
+        this.htmlResolver = (CsuHtmlResolver)applicationContext.getBean("csuHtmlReslver");
+        this.httpConnect = (CsuHttpConnectImpl)applicationContext.getBean("csuHttpConnect");
     }
 
     public void testHandleRosolver(){
@@ -32,6 +32,25 @@ public class HtmlHandlerTestCase extends TestCase{
             this.htmlHandler.handleRosolver(classDetails);
             List<ClassDetail> classDetails1 = this.htmlResolver.resolve(2);
             this.htmlHandler.handleRosolver(classDetails1);
+            List<ClassDetail> classDetails2 = this.htmlResolver.resolve(3);
+            this.htmlHandler.handleRosolver(classDetails1);
+            List<ClassDetail> classDetails3 = this.htmlResolver.resolve(4);
+            this.htmlHandler.handleRosolver(classDetails1);
+            List<ClassDetail> classDetails4 = this.htmlResolver.resolve(5);
+            this.htmlHandler.handleRosolver(classDetails1);
+            List<ClassDetail> classDetails5 = this.htmlResolver.resolve(6);
+            this.htmlHandler.handleRosolver(classDetails1);
+            List<ClassDetail> classDetails6 = this.htmlResolver.resolve(7);
+            this.htmlHandler.handleRosolver(classDetails1);
+            List<ClassDetail> classDetails7 = this.htmlResolver.resolve(8);
+            this.htmlHandler.handleRosolver(classDetails1);
+            List<ClassDetail> classDetails8 = this.htmlResolver.resolve(9);
+            this.htmlHandler.handleRosolver(classDetails1);
+            List<ClassDetail> classDetails9 = this.htmlResolver.resolve(10);
+            this.htmlHandler.handleRosolver(classDetails1);
+            List<ClassDetail> classDetails10 = this.htmlResolver.resolve(11);
+            this.htmlHandler.handleRosolver(classDetails1);
+
         }catch (Exception e){
             e.printStackTrace();
             Assert.fail();

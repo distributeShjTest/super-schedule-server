@@ -9,7 +9,6 @@
         <result property="roomNo" column="room_no" jdbcType="VARCHAR"></result>
         <result property="courseId" column="course_id" jdbcType="INTEGER"></result>
         <result property="teacherId" column="teacher_id" jdbcType="INTEGER"></result>
-        <result property="schoolId" column="school_id" jdbcType="INTEGER"/>
     </resultMap>
 
 

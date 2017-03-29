@@ -4,7 +4,6 @@
     <resultMap id="school_map" class="com.su.schedule.model.po.School">
         <result property="id" column="id" jdbcType="INTEGER"></result>
         <result property="name" column="name" jdbcType="VARCHAR"></result>
-        <result property="schoolId" column="school_id" jdbcType="INTEGER"/>
     </resultMap>
 	
 	<select id="query_for_id" parameterClass="java.util.Map" resultClass="INTEGER">

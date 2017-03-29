@@ -11,9 +11,9 @@
         <iterate conjunction="," open="(" close=")">
             #list[]#
         </iterate>
-        ;
+
     </select>
-    
+
     <insert id="insert_class" parameterClass="com.su.schedule.model.po.Class">
         insert into class (`name`) VALUES (#name#)
         <selectKey keyProperty="id" resultClass="java.lang.Integer">
