@@ -7,14 +7,15 @@ public class CRRel {
     private int id;
     private int classId;
     private int relationId;
+    private Integer schoolId;
 
-
-    @Override
+	@Override
     public String toString() {
         return "CRRel{" +
                 "id=" + id +
                 ", classId=" + classId +
                 ", relationId=" + relationId +
+                ", schoolId=" + schoolId +
                 '}';
     }
 
@@ -62,4 +63,12 @@ public class CRRel {
     public void setRelationId(int relationId) {
         this.relationId = relationId;
     }
+
+    public Integer getSchoolId() {
+		return schoolId;
+	}
+
+	public void setSchoolId(Integer schoolId) {
+		this.schoolId = schoolId;
+	}
 }

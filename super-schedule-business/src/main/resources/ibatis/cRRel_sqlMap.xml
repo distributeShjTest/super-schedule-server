@@ -5,6 +5,7 @@
         <result property="id" column="id" jdbcType="Interger"></result>
         <result property="classId" column="class_id" jdbcType="Interger"></result>
         <result property="relationId" column="relation_id" jdbcType="Integer"></result>
+        <result property="schoolId" column="school_id" jdbcType="INTEGER"/>
     </resultMap>
 
 

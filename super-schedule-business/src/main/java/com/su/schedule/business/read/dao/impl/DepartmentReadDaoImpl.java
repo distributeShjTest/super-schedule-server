@@ -20,7 +20,7 @@ public class DepartmentReadDaoImpl implements DepartmentReadDao {
     private SqlMapClient sqlMapClient;
 
 
-    public List<Department> queryForNoAndName(List<String> departmentNames) throws Exception {
+    public List<Department> queryForNoAndName(Integer schoolId ,List<String> departmentNames) throws Exception {
         return this.sqlMapClient.queryForList("department_sql_map.query_for_name",departmentNames);
     }
 }

@@ -11,14 +11,15 @@
 		<result property="teacherName" column="teacherName" jdbcType="VARCHAR" />
 		<result property="courseName" column="courseName" jdbcType="VARCHAR" />
 		<result property="buildingName" column="building_name" jdbcType="VARCHAR"/>
+		<result property="schoolId" column="school_id" jdbcType="INTEGER"/>
 	</resultMap>
 
 	<select id="query_for_combine" parameterClass="com.su.schedule.model.dto.DataSend"
 		resultMap="dataAccess_map">
 
-		select relation.week_no,relation.course_id,relation.teacher_id,relation.lesson_no,className,courseName,teacherName,period,building_name from relation
-			INNER JOIN
-		(SELECT course.name as courseName,course.id,course.period as period FROM course
+		select relation.week_no, relation.course_id, relation.teacher_id, relation.lesson_no, className, courseName, teacherName, period, building_name, school_id from relation
+		INNER JOIN
+		(SELECT course.name as courseName, course.id, course.period as period FROM course
 		<isNotEmpty prepend=" WHERE " property="courseName">
 			course.name = #courseName#
 		</isNotEmpty>

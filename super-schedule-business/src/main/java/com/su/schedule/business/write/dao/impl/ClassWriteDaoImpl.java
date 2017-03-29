@@ -10,6 +10,9 @@ import org.springframework.stereotype.Repository;
 
 import com.ibatis.sqlmap.client.SqlMapClient;
 
+/**
+ * @author:lph on 2017年3月28日
+ */
 @Repository
 public class ClassWriteDaoImpl implements ClassWriteDao {
 	@Autowired

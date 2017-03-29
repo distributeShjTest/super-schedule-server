@@ -1,5 +1,8 @@
 package com.su.schedule.model.dto;
 
+/**
+ * @author:lph on 2017年3月28日
+ */
 public class DataSend {
 	private String courseName;
 	private String teacherName;

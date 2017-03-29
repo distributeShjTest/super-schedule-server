@@ -1,10 +1,13 @@
 package com.su.schedule.model.po;
 
+/**
+ * @author:lph on 2017年3月28日
+ */
 public class Teacher {
 	private Integer id;
 	private String name;
 	private String level;
-
+	private Integer schoolId;
 
 	@Override
 	public boolean equals(Object o) {
@@ -32,6 +35,7 @@ public class Teacher {
 				"id=" + id +
 				", name='" + name + '\'' +
 				", level='" + level + '\'' +
+				", schoolId=" + schoolId +
 				'}';
 	}
 
@@ -57,5 +61,13 @@ public class Teacher {
 
 	public void setLevel(String level) {
 		this.level = level;
+	}
+
+	public Integer getSchoolId() {
+		return schoolId;
+	}
+
+	public void setSchoolId(Integer schoolId) {
+		this.schoolId = schoolId;
 	}
 }

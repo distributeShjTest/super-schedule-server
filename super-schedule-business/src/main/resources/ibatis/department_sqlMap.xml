@@ -5,6 +5,7 @@
         <result property="id" column="id" jdbcType="INTEGER"></result>
         <result property="no" column="no" jdbcType="INTEGER"></result>
         <result property="name" column="name" jdbcType="VARCHAR"></result>
+        <result property="schoolId" column="school_id" jdbcType="INTEGER"/>
     </resultMap>
 
 
@@ -15,7 +16,7 @@
             <!--#list[].no#-->
         <!--</iterate>-->
         <!--and-->
-         `name` in
+        school.id = department.school_id and `name` in
         <iterate conjunction="," open="(" close=")">
             #list[]#
         </iterate>

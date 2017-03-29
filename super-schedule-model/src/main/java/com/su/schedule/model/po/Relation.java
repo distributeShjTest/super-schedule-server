@@ -1,5 +1,8 @@
 package com.su.schedule.model.po;
 
+/**
+ * @author:lph on 2017年3月28日
+ */
 public class Relation {
 	private Integer id;
 	private Integer weekNo;
@@ -8,7 +11,8 @@ public class Relation {
 	private Integer roomNo;
 	private Integer courseId;
 	private Integer teacherId;
-	
+	private Integer schoolId;
+
 	public Relation(){
 	}
 
@@ -22,6 +26,7 @@ public class Relation {
 				", roomNo=" + roomNo +
 				", courseId=" + courseId +
 				", teacherId=" + teacherId +
+				", schoolId=" + schoolId +
 				'}';
 	}
 
@@ -108,6 +113,14 @@ public class Relation {
 
 	public void setTeacherId(Integer teacherId) {
 		this.teacherId = teacherId;
+	}
+	
+	public Integer getSchoolId() {
+		return schoolId;
+	}
+
+	public void setSchoolId(Integer schoolId) {
+		this.schoolId = schoolId;
 	}
 }
 

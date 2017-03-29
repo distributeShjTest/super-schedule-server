@@ -1,16 +1,21 @@
 package com.su.schedule.model.po;
 
+/**
+ * @author:lph on 2017年3月28日
+ */
 public class Department {
 	private Integer id;
 	private Integer no;
 	private String name;
-	
+	private Integer schoolId;
+
 	@Override
 	public String toString(){
 		return "Course{" +
                 "id=" + id +
                 ", no=" + no +
                 ", name='" + name + '\'' +
+                ", schoolId=" + schoolId +
                 '}';
 	}
 	
@@ -31,5 +36,13 @@ public class Department {
 	}
 	public void setName(String name) {
 		this.name = name;
+	}
+	
+	public Integer getSchoolId() {
+		return schoolId;
+	}
+
+	public void setSchoolId(Integer schoolId) {
+		this.schoolId = schoolId;
 	}
 }

@@ -8,6 +8,6 @@ import java.util.List;
  * Created by shj on 2017/3/27.
  */
 public interface TeacherReadDao {
-    List<Teacher> queryForName(List<String> list)throws Exception;
+    List<Teacher> queryForName(Integer schoolId ,List<String> list)throws Exception;
     List<String> queryForAllNames()throws Exception;
 }

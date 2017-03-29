@@ -10,6 +10,9 @@ import org.springframework.stereotype.Repository;
 import com.ibatis.sqlmap.client.SqlMapClient;
 import com.su.schedule.model.po.Course;
 
+/**
+ * @author:lph on 2017年3月28日
+ */
 @Repository
 public class CourseWriteDaoImpl implements CourseWriteDao {
 	@Autowired
