@@ -17,11 +17,11 @@ public class CourseReadManageImpl implements CourseReadManage{
 
     @Autowired
     private CourseReadDao courseReadDao;
-    public List<Course> getCoursesByNames(List<String> courseNames) throws Exception {
-        return this.courseReadDao.queryForName(courseNames);
+    public List<Course> getCoursesByNames(List<String> courseNames,Integer schoolId) throws Exception {
+        return this.courseReadDao.queryForName(schoolId,courseNames);
     }
 
-    public List<String> getAllCourseNames() throws Exception {
-        return this.courseReadDao.quryForAllNames();
+    public List<String> getAllCourseNames(Integer schoolId) throws Exception {
+        return this.courseReadDao.quryForAllNames(schoolId);
     }
 }

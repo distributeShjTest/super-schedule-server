@@ -8,6 +8,6 @@ import java.util.List;
  * Created by shj on 2017/3/28.
  */
 public interface TeacherReadManage {
-    List<Teacher> getTeacherByNames(List<String> teacherNames)throws Exception;
-    List<String> getAllTeacherNames()throws Exception;
+    List<Teacher> getTeacherByNames(List<String> teacherNames,Integer schoolId)throws Exception;
+    List<String> getAllTeacherNames(Integer schoolId)throws Exception;
 }

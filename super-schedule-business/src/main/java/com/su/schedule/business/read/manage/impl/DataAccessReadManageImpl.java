@@ -26,11 +26,11 @@ public class DataAccessReadManageImpl implements DataAccessReadManage{
 
     private static Logger logger = Logger.getLogger(DataAccessReadManageImpl.class);
 
-    public List<TimeTableModel> getTimeTableModels(DataSendExtend dataSend) throws Exception {
+    public List<TimeTableModel> getTimeTableModels(DataSendExtend dataSend,Integer schoolId) throws Exception {
         System.out.println(dataSend);
         if(dataSend.getWeekNum()==null)
             throw new Exception("weekNum count not be null");
-        List<DataAccess> dataAccesses = this.dataAccessReadDao.queryForCombine(dataSend);
+        List<DataAccess> dataAccesses = this.dataAccessReadDao.queryForCombine(schoolId,dataSend);
 
 
         Integer weekNo = dataSend.getWeekNum();

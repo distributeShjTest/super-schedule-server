@@ -10,5 +10,5 @@ import java.util.List;
 public interface DepartmentReadManage {
 
 
-    List<Department> getDepartmentsByNames(List<String> departmentNames)throws Exception;
+    List<Department> getDepartmentsByNames(List<String> departmentNames,Integer schoolId)throws Exception;
 }
