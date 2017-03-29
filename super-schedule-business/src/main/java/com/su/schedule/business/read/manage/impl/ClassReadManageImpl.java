@@ -17,7 +17,7 @@ public class ClassReadManageImpl implements ClassReadManage {
     @Autowired
     private ClassReadDao classReadDao;
 
-    public List<Class> getClassByNames(List<String> classNames,Integer school) throws Exception {
+    public List<Class> getClassByNames(List<String> classNames) throws Exception {
         return this.classReadDao.queryForName(classNames);
     }
 }

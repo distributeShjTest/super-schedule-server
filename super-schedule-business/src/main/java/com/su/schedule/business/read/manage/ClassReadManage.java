@@ -8,5 +8,5 @@ import java.util.List;
  * Created by shj on 2017/3/28.
  */
 public interface ClassReadManage {
-    List<Class> getClassByNames(List<String> classNames,Integer school)throws Exception;
+    List<Class> getClassByNames(List<String> classNames)throws Exception;
 }

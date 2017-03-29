@@ -1,6 +1,8 @@
 import com.su.schedule.model.dto.ClassDetail;
-import com.su.schedule.spy.connnet.impl.HttpConnect;
+import com.su.schedule.spy.connnet.impl.CsuHttpConnectImpl;
+import com.su.schedule.spy.connnet.impl.CsuPageParamHeaderSimulate;
 import com.su.schedule.spy.resolver.HtmlResolver;
+import com.su.schedule.spy.resolver.impl.CsuHtmlResolver;
 import junit.framework.TestCase;
 import org.junit.Assert;
 
@@ -11,16 +13,17 @@ public class HttpReSolverTestCase extends TestCase{
 
     public void testInsertClassDetail(){
         ClassDetail classDetail = new ClassDetail();
+        CsuHtmlResolver htmlResolver = new CsuHtmlResolver();
         try {
-            HtmlResolver.insertClassDetail(classDetail,0,"lesson");
-            HtmlResolver.insertClassDetail(classDetail,1,"1");
-            HtmlResolver.insertClassDetail(classDetail,2,"shj");
-            HtmlResolver.insertClassDetail(classDetail,3,"prefe");
-            HtmlResolver.insertClassDetail(classDetail,10,"地勘1601,地勘1602");
-            HtmlResolver.insertClassDetail(classDetail,11,"weeks");
-            HtmlResolver.insertClassDetail(classDetail,12,"sections");
-            HtmlResolver.insertClassDetail(classDetail,13,"location");
-            HtmlResolver.insertClassDetail(classDetail,14,"department");
+            htmlResolver.insertClassDetail(classDetail,0,"lesson");
+            htmlResolver.insertClassDetail(classDetail,1,"1");
+            htmlResolver.insertClassDetail(classDetail,2,"shj");
+            htmlResolver.insertClassDetail(classDetail,3,"prefe");
+            htmlResolver.insertClassDetail(classDetail,10,"地勘1601,地勘1602");
+            htmlResolver.insertClassDetail(classDetail,11,"weeks");
+            htmlResolver.insertClassDetail(classDetail,12,"sections");
+            htmlResolver.insertClassDetail(classDetail,13,"location");
+            htmlResolver.insertClassDetail(classDetail,14,"department");
             System.out.println(classDetail);
         }catch (Exception e){
             e.printStackTrace();
@@ -31,10 +34,12 @@ public class HttpReSolverTestCase extends TestCase{
 
     public void testResolv(){
         try {
-            HttpConnect httpConnect = new HttpConnect();
+            CsuHttpConnectImpl httpConnect = new CsuHttpConnectImpl();
             httpConnect.init();
-            HtmlResolver htmlResolver = new HtmlResolver();
+            CsuHtmlResolver htmlResolver = new CsuHtmlResolver();
             htmlResolver.setHttpConnect(httpConnect);
+            CsuPageParamHeaderSimulate pageParamHeaderSimulate = new CsuPageParamHeaderSimulate();
+            htmlResolver.setPageParamHeaderSimulate(pageParamHeaderSimulate);
             System.out.println(htmlResolver.resolve(1));
         }catch (Exception e){
             e.printStackTrace();

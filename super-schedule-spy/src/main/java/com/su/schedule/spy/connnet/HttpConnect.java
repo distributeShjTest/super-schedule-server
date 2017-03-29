@@ -39,6 +39,8 @@ public abstract class HttpConnect {
         return httpGet;
     }
 
+
+
     public HttpGet httpGetSimulate(HttpGet httpGet) throws Exception {
         for(Header h:Header.values()){
             httpGet.addHeader(h.getName(),h.getValue());
@@ -92,9 +94,12 @@ public abstract class HttpConnect {
     }
 
     public void getCookie() throws Exception {
+        HttpGet httpGet = new HttpGet(Constant.SESSSION_GET_URL);
+        for (Header h:Header.values()){
+            httpGet.addHeader(h.getName(),h.getValue());
+        }
 
-
-        this.httpClient.execute(this.httpGetSimulate(Constant.PEI_ZHENG_LOGIN_URL));
+        this.httpClient.execute(httpGet);
     }
 
     public String getValidateCode() {

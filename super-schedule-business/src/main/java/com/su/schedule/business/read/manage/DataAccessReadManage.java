@@ -12,5 +12,5 @@ import java.util.List;
  */
 public interface DataAccessReadManage {
 
-    public List<TimeTableModel> getTimeTableModels(DataSendExtend dataSend,Integer schoolId)throws Exception;
+    public List<TimeTableModel> getTimeTableModels(DataSendExtend dataSend)throws Exception;
 }

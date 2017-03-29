@@ -9,6 +9,6 @@ import java.util.List;
  */
 public interface CourseReadManage {
 
-    List<Course> getCoursesByNames(List<String> courseNames,Integer schoolId)throws Exception;
-    List<String> getAllCourseNames(Integer schoolId)throws Exception;
+    List<Course> getCoursesByNames(List<String> courseNames)throws Exception;
+    List<String> getAllCourseNames()throws Exception;
 }

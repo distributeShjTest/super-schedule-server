@@ -1,7 +1,7 @@
-import com.su.schedule.spy.connnet.impl.HttpConnect;
-import com.su.schedule.spy.connnet.impl.PageParamHeaderSimulate;
+import com.su.schedule.spy.connnet.PageParamHeaderSimulate;
+import com.su.schedule.spy.connnet.impl.CsuHttpConnectImpl;
+import com.su.schedule.spy.connnet.impl.CsuPageParamHeaderSimulate;
 import junit.framework.TestCase;
-import org.apache.http.HttpEntity;
 import org.junit.Assert;
 
 /**
@@ -9,10 +9,10 @@ import org.junit.Assert;
  */
 public class HttpConnectTestCase extends TestCase {
 
-    private HttpConnect httpConnect;
+    private CsuHttpConnectImpl httpConnect;
 
     public HttpConnectTestCase(){
-        this.httpConnect = new HttpConnect();
+        this.httpConnect = new CsuHttpConnectImpl();
         this.httpConnect.init();
 
     }
@@ -20,8 +20,9 @@ public class HttpConnectTestCase extends TestCase {
     public void testExecuteRequest(){
         try {
             this.httpConnect.getCookie();
-            System.out.println(this.httpConnect.executeRequest(this.httpConnect.httpPostSimulate(PageParamHeaderSimulate.getFirstPageRequest()),true));
-            System.out.println(this.httpConnect.executeRequest(this.httpConnect.httpPostSimulate(PageParamHeaderSimulate.getOtherPageRequest(2)),true));
+            PageParamHeaderSimulate pageParamHeaderSimulate =new CsuPageParamHeaderSimulate();
+            System.out.println(this.httpConnect.executeRequest(this.httpConnect.httpPostSimulate(pageParamHeaderSimulate.getFirstPageRequest()),true));
+            System.out.println(this.httpConnect.executeRequest(this.httpConnect.httpPostSimulate(pageParamHeaderSimulate.getOtherPageRequest(2)),true));
 
         }catch (Exception e){
             e.printStackTrace();

@@ -2,7 +2,7 @@ package com.su.schedule.business.read.manage.impl;
 
 import com.su.schedule.business.read.dao.TeacherReadDao;
 import com.su.schedule.business.read.manage.TeacherReadManage;
-import com.su.schedule.model.po.School;
+
 import com.su.schedule.model.po.Teacher;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,11 +18,11 @@ public class TeacherReadManageImpl implements TeacherReadManage{
     @Autowired
     private TeacherReadDao teacherReadDao;
 
-    public List<Teacher> getTeacherByNames(List<String> teacherNames,Integer schoolId) throws Exception {
-        return this.teacherReadDao.queryForName(schoolId,teacherNames);
+    public List<Teacher> getTeacherByNames(List<String> teacherNames) throws Exception {
+        return this.teacherReadDao.queryForName(teacherNames);
     }
 
-    public List<String> getAllTeacherNames(Integer school) throws Exception {
+    public List<String> getAllTeacherNames() throws Exception {
         return this.teacherReadDao.queryForAllNames();
     }
 }

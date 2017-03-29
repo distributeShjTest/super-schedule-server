@@ -1,10 +1,8 @@
-import com.su.schedule.business.write.dao.RelationWriteDao;
 import com.su.schedule.model.dto.ClassDetail;
-import com.su.schedule.model.po.Class;
 import com.su.schedule.model.po.Relation;
-import com.su.schedule.spy.connnet.impl.HttpConnect;
-import com.su.schedule.spy.handler.HtmlHandler;
-import com.su.schedule.spy.resolver.HtmlResolver;
+import com.su.schedule.spy.connnet.impl.CsuHttpConnectImpl;
+import com.su.schedule.spy.handler.impl.CsuHandler;
+import com.su.schedule.spy.resolver.impl.CsuHtmlResolver;
 import junit.framework.TestCase;
 import org.junit.Assert;
 import org.springframework.context.ApplicationContext;
@@ -16,16 +14,16 @@ import java.util.List;
  * Created by shj on 2017/3/28.
  */
 public class HtmlHandlerTestCase extends TestCase{
-    private HttpConnect httpConnect;
-    private HtmlHandler htmlHandler;
-    private HtmlResolver htmlResolver;
+    private CsuHttpConnectImpl httpConnect;
+    private CsuHandler htmlHandler;
+    private CsuHtmlResolver htmlResolver;
     public HtmlHandlerTestCase(){
 
         System.setProperty("global.config.path","/Users/shj/dev/env/env-dev");
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("super-schedule-spy/spring-service.xml");
-        this.htmlHandler = (HtmlHandler) applicationContext.getBean("htmlHandler");
-        this.htmlResolver = (HtmlResolver)applicationContext.getBean("htmlResolver");
-        this.httpConnect = (HttpConnect)applicationContext.getBean("httpConnect");
+        this.htmlHandler = (CsuHandler) applicationContext.getBean("csuHandler");
+        this.htmlResolver = (CsuHtmlResolver)applicationContext.getBean("csuHtmlResolver");
+        this.httpConnect = (CsuHttpConnectImpl)applicationContext.getBean("csuHttpConnectImpl");
     }
 
     public void testHandleRosolver(){

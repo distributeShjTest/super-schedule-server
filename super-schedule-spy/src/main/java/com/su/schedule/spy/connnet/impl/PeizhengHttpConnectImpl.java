@@ -1,12 +1,14 @@
 package com.su.schedule.spy.connnet.impl;
 
 import com.su.schedule.model.constants.Constant;
+import com.su.schedule.model.constants.Header;
 import com.su.schedule.model.constants.ValidateHeader;
 import com.su.schedule.spy.connnet.HttpConnect;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.CookieStore;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.BasicCookieStore;
 import org.apache.http.impl.client.HttpClients;
 import org.springframework.stereotype.Component;
@@ -57,5 +59,14 @@ public class PeizhengHttpConnectImpl extends HttpConnect {
         }
         this.addCoockies(httpGet);
         return httpGet;
+    }
+
+    @Override
+    public HttpPost httpPostSimulate(HttpPost httpPost) throws Exception {
+        for(ValidateHeader h:ValidateHeader.values()){
+            httpPost.addHeader(h.getName(),h.getValue());
+        }
+        this.addCoockies(httpPost);
+        return httpPost;
     }
 }

@@ -39,6 +39,8 @@ public class CsuHtmlResolver implements HtmlResolver {
 
     private boolean isEnd = false;
 
+
+
     private org.apache.log4j.Logger logger = org.apache.log4j.Logger.getLogger(CsuHtmlResolver.class);
     public List<ClassDetail> resolve(int pageNum)throws Exception{
         List<ClassDetail> classDetails = new ArrayList<ClassDetail>();
@@ -132,5 +134,13 @@ public class CsuHtmlResolver implements HtmlResolver {
         }else {
             return this.httpConnect.executeRequest(this.httpConnect.httpPostSimulate(pageParamHeaderSimulate.getOtherPageRequest(pageNum)),true);
         }
+    }
+
+    public PageParamHeaderSimulate getPageParamHeaderSimulate() {
+        return pageParamHeaderSimulate;
+    }
+
+    public void setPageParamHeaderSimulate(PageParamHeaderSimulate pageParamHeaderSimulate) {
+        this.pageParamHeaderSimulate = pageParamHeaderSimulate;
     }
 }

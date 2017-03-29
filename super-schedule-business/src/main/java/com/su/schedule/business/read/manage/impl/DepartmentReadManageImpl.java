@@ -17,7 +17,7 @@ public class DepartmentReadManageImpl implements DepartmentReadManage{
     @Autowired
     private DepartmentReadDao departmentReadDao;
 
-    public List<Department> getDepartmentsByNames(List<String> departmentNames,Integer schoolId) throws Exception {
-        return this.departmentReadDao.queryForNoAndName(schoolId,departmentNames);
+    public List<Department> getDepartmentsByNames(List<String> departmentNames) throws Exception {
+        return this.departmentReadDao.queryForNoAndName(departmentNames);
     }
 }
