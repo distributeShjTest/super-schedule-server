@@ -7,6 +7,16 @@ public class DataSend {
 	private String courseName;
 	private String teacherName;
 	private String className;
+	private Integer schoolId;
+
+	public Integer getSchoolId() {
+		return schoolId;
+	}
+
+	public void setSchoolId(Integer schoolId) {
+		this.schoolId = schoolId;
+	}
+
 	public String getCourseName() {
 		return courseName;
 	}
