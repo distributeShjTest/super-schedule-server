@@ -8,6 +8,6 @@ import java.util.List;
  * Created by shj on 2017/3/27.
  */
 public interface DepartmentReadDao {
-    public List<Department> queryForNoAndName(Integer schoolId ,List<String> departmentNames)throws Exception;
+    public List<Department> queryForNoAndName(List<String> departmentNames)throws Exception;
 
 }

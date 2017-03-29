@@ -18,7 +18,7 @@ public class CourseReadManageImpl implements CourseReadManage{
     @Autowired
     private CourseReadDao courseReadDao;
     public List<Course> getCoursesByNames(List<String> courseNames,Integer schoolId) throws Exception {
-        return this.courseReadDao.queryForName(schoolId,courseNames);
+        return this.courseReadDao.queryForName(courseNames);
     }
 
     public List<String> getAllCourseNames(Integer schoolId) throws Exception {

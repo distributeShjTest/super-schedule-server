@@ -11,16 +11,13 @@ import com.su.schedule.business.read.dao.DataAccessReadDao;
 import com.su.schedule.model.dto.DataSend;
 import com.su.schedule.model.po.DataAccess;
 
-/**
- * @author:lph on 2017年3月28日
- */
 @Repository
 public class DataAccessReadDaoImpl implements DataAccessReadDao {
 	@Autowired
 	@Qualifier(value = "sqlMapClientRead")
 	private SqlMapClient sqlMap;
 
-	public List<DataAccess> queryForCombine(Integer schoolId ,DataSend dataSend) throws Exception {
+	public List<DataAccess> queryForCombine(DataSend dataSend) throws Exception {
 		return sqlMap.queryForList("dataAccess_sql_map.query_for_combine", dataSend);
 	}
 }

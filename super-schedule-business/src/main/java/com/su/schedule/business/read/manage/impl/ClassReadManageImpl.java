@@ -18,6 +18,6 @@ public class ClassReadManageImpl implements ClassReadManage {
     private ClassReadDao classReadDao;
 
     public List<Class> getClassByNames(List<String> classNames,Integer school) throws Exception {
-        return this.classReadDao.queryForName(school,classNames);
+        return this.classReadDao.queryForName(classNames);
     }
 }

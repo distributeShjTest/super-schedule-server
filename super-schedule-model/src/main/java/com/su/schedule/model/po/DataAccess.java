@@ -1,8 +1,5 @@
 package com.su.schedule.model.po;
 
-/**
- * @author:lph on 2017年3月28日
- */
 public class DataAccess {
 	private Integer id;
 	private Integer weekNo;
@@ -14,11 +11,10 @@ public class DataAccess {
 	private Integer courseId;
 	private Integer teacherId;
 	private String buildingName;
-	private Integer schoolId;
-
+	
 	public DataAccess() {
 	}
-	
+
 	@Override
 	public String toString() {
 		return "DataAccess{" +
@@ -32,7 +28,6 @@ public class DataAccess {
 				", courseId=" + courseId +
 				", teacherId=" + teacherId +
 				", buildingName='" + buildingName + '\'' +
-				", schoolId=" + schoolId +
 				'}';
 	}
 
@@ -150,13 +145,4 @@ public class DataAccess {
 	public void setBuildingName(String buildingName) {
 		this.buildingName = buildingName;
 	}
-	
-	public Integer getSchoolId() {
-		return schoolId;
-	}
-
-	public void setSchoolId(Integer schoolId) {
-		this.schoolId = schoolId;
-	}
-
 }

@@ -1,26 +1,21 @@
 package com.su.schedule.model.po;
 
-/**
- * @author:lph on 2017年3月28日
- */
 public class Course {
 	private Integer id;
 	private String name;
 	private String period;
 	private String score;
 	private Integer departmId;
-	private Integer schoolId;
-
+	
 	public Course(){
 	}
 
-	public Course(Integer id, String name, String peroid, String score, Integer departmId, Integer schoolId){
+	public Course(Integer id, String name, String peroid, String score, Integer departmId){
 		this.id = id;
 		this.name = name;
 		this.period = peroid;
 		this.score = score;
 		this.departmId = departmId;
-		this.schoolId = schoolId;
 	}
 
 	@Override
@@ -31,7 +26,6 @@ public class Course {
                 ", period='" + period + '\'' +
                 ", score='" + score + '\'' +
                 ", departmId=" + departmId +
-                ", schoolId=" + schoolId +
                 '}';
 	}
 	
@@ -64,13 +58,5 @@ public class Course {
 	}
 	public void setDepartmId(Integer departmId) {
 		this.departmId = departmId;
-	}
-	
-	public Integer getSchoolId() {
-		return schoolId;
-	}
-
-	public void setSchoolId(Integer schoolId) {
-		this.schoolId = schoolId;
 	}
 }
