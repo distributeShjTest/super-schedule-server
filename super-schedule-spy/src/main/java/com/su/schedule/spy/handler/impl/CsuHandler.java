@@ -116,7 +116,6 @@ public class CsuHandler implements HtmlHandler{
             relation.setCourseId(this.getCourseId(courses,c.getLesson()));
             relation.setBuildingName(c.getLocation());
             this.sectionHandle(c.getSections(),relation);
-            relation.setSchoolId(schoolId);
                 relation.setId(this.relationWriteManage.insertRelationReturnId(relation));
 
                 if(org.springframework.util.CollectionUtils.isEmpty(c.getClassNames()))
@@ -126,7 +125,6 @@ public class CsuHandler implements HtmlHandler{
                     CRRel crRel = new CRRel();
                     crRel.setRelationId(relation.getId());
                     crRel.setClassId(id);
-                    crRel.setSchoolId(schoolId);
                     this.crRelWriteManage.insertCRRel(crRel);
                 }
 
@@ -141,10 +139,9 @@ public class CsuHandler implements HtmlHandler{
     }
 
     private List<Teacher> getAllTeachers(HashMap<String,Teacher> teacherMap)throws Exception{
-       List<Teacher> teachers =  this.teacherReadManage.getTeacherByNames(new ArrayList<String>(teacherMap.keySet()),schoolId);
+       List<Teacher> teachers =  this.teacherReadManage.getTeacherByNames(new ArrayList<String>(teacherMap.keySet()));
        if(org.springframework.util.CollectionUtils.isEmpty(teachers)){
            for(String s:teacherMap.keySet()){
-               teacherMap.get(s).setSchoolId(schoolId);
                teacherMap.get(s).setId(this.teacherWriteManage.insertTeacherReturnId(teacherMap.get(s)));
            }
        }else {
@@ -160,7 +157,6 @@ public class CsuHandler implements HtmlHandler{
                }
                if(flag)
                    continue;
-               teacherMap.get(s).setSchoolId(schoolId);
                teacherMap.get(s).setId(this.teacherWriteManage.insertTeacherReturnId(teacherMap.get(s)));
            }
        }
@@ -168,7 +164,7 @@ public class CsuHandler implements HtmlHandler{
     }
 
     private List<Class> getAllClasses(List<String> classNames)throws Exception{
-        List<Class> classes = this.classReadManage.getClassByNames(classNames,schoolId);
+        List<Class> classes = this.classReadManage.getClassByNames(classNames);
         List<Class> newClasses = new ArrayList<Class>();
         for(String c:classNames){
             boolean flag = false;
@@ -183,7 +179,6 @@ public class CsuHandler implements HtmlHandler{
                 continue;
             Class cla= new Class();
             cla.setName(c);
-            cla.setSchoolId(schoolId);
             cla.setId(this.classWriteManage.insertClassReturnId(cla));
             newClasses.add(cla);
         }
@@ -192,7 +187,7 @@ public class CsuHandler implements HtmlHandler{
     }
 
     private List<Department> getAllDepartments(List<String> departmentNames)throws Exception{
-        List<Department> departments = this.departmentReadManage.getDepartmentsByNames(departmentNames,schoolId);
+        List<Department> departments = this.departmentReadManage.getDepartmentsByNames(departmentNames);
         List<Department> newDepartments = new ArrayList<Department>();
         for(String ds:departmentNames){
             boolean flag = false;
@@ -208,7 +203,6 @@ public class CsuHandler implements HtmlHandler{
                 continue;
             Department dnew = new Department();
             dnew.setName(ds);
-            dnew.setSchoolId(schoolId);
             dnew.setId(this.departmentWriteManage.insertDepartmentReturnId(dnew));
             newDepartments.add(dnew);
         }
@@ -217,7 +211,7 @@ public class CsuHandler implements HtmlHandler{
     }
 
     private List<Course> getAllCourses(HashMap<String,Course> courseMap,List<Department> departments)throws Exception{
-        List<Course> courses = this.courseReadManage.getCoursesByNames(new ArrayList<String>(courseMap.keySet()),schoolId);
+        List<Course> courses = this.courseReadManage.getCoursesByNames(new ArrayList<String>(courseMap.keySet()));
 
         for(String c:courseMap.keySet()){
             boolean flag = false;
@@ -236,7 +230,6 @@ public class CsuHandler implements HtmlHandler{
             }
             if(flag)
                 continue;
-            courseMap.get(c).setSchoolId(schoolId);
             courseMap.get(c).setId(this.courseWriteManage.insertCourseReturnId(courseMap.get(c)));
 
         }
