@@ -1,13 +1,10 @@
 package com.su.schedule.spy.main;
 
-import com.su.schedule.business.write.dao.RelationWriteDao;
 import com.su.schedule.model.dto.ClassDetail;
-import com.su.schedule.spy.handler.HtmlHandler;
-import com.su.schedule.spy.resolver.HtmlResolver;
+import com.su.schedule.spy.handler.impl.CsuHandler;
+import com.su.schedule.spy.resolver.impl.CsuHtmlResolver;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
@@ -20,10 +17,10 @@ import java.util.List;
 public class SpyMain {
 
     @Autowired
-    private HtmlHandler htmlHandler;
+    private CsuHandler htmlHandler;
 
     @Autowired
-    private HtmlResolver htmlResolver;
+    private CsuHtmlResolver htmlResolver;
     private static final long sleepMills = 2678400000l;
 
     private static Logger logger = Logger.getLogger(SpyMain.class);

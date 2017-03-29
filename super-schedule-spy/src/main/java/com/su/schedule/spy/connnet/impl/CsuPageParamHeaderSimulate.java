@@ -4,11 +4,13 @@ import com.su.schedule.model.constants.Constant;
 import com.su.schedule.model.constants.FirstPageParam;
 import com.su.schedule.model.constants.OtherPageParam;
 import com.su.schedule.model.constants.PageHeader;
+import com.su.schedule.spy.connnet.PageParamHeaderSimulate;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.protocol.HTTP;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,9 +18,10 @@ import java.util.List;
 /**
  * Created by shj on 2017/3/26.
  */
-public class PageParamHeaderSimulate {
+@Component(value = "CsuPageParamHeaderSimulate")
+public class CsuPageParamHeaderSimulate implements PageParamHeaderSimulate{
 
-    public static HttpPost getFirstPageRequest()throws Exception{
+    public HttpPost getFirstPageRequest()throws Exception{
         HttpPost httpPost = new HttpPost(Constant.PAGE_INFO_URL);
         List<NameValuePair> params = new ArrayList<NameValuePair>();
         for(FirstPageParam f:FirstPageParam.values()){
@@ -35,7 +38,7 @@ public class PageParamHeaderSimulate {
         return httpPost;
     }
 
-    public static HttpPost getOtherPageRequest(int pageNum)throws Exception{
+    public HttpPost getOtherPageRequest(int pageNum)throws Exception{
         HttpPost httpPost = new HttpPost(Constant.PAGE_INFO_URL);
         List<NameValuePair> params = new ArrayList<NameValuePair>();
         for(OtherPageParam f:OtherPageParam.values()){
