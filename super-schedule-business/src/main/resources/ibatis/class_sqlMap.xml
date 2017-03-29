@@ -4,11 +4,10 @@
     <resultMap id="class_map" class="com.su.schedule.model.po.Class">
         <result property="id" column="id" jdbcType="INTEGER"/>
         <result property="name" column="name" jdbcType="VARCHAR"/>
-        <result property="schoolId" column="school_id" jdbcType="INTEGER"/>
     </resultMap>
 
     <select id="query_for_name" parameterClass="java.util.List" resultMap="class_map">
-        SELECT id,`name` FROM class WHERE school.id = class.school_id and `name` in
+        SELECT id,`name` FROM class WHERE `name` in
         <iterate conjunction="," open="(" close=")">
             #list[]#
         </iterate>

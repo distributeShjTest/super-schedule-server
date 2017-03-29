@@ -10,7 +10,7 @@
 
 
     <select id="query_for_name" parameterClass="java.util.List" resultMap="teacher_map">
-        select id,`name`,`level` from teacher WHERE school.id = teacher.school_id and `name` in
+        select id,`name`,`level` from teacher WHERE `name` in
         <iterate conjunction="," open="(" close=")">
             #list[]#
         </iterate>
@@ -18,7 +18,7 @@
     </select>
 
     <select id="query_for_all_names" resultClass="java.lang.String">
-        SELECT DISTINCT `name` FROM teacher WHERE school.id = teacher.school_id;
+        SELECT DISTINCT `name` FROM teacher;
     </select>
 
     <insert id="insert_teacher" parameterClass="com.su.schedule.model.po.Teacher">

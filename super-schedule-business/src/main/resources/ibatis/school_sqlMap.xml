@@ -8,6 +8,6 @@
     </resultMap>
 	
 	<select id="query_for_id" parameterClass="java.util.Map" resultClass="INTEGER">
-        SELECT id from `school` where school.id = school.school_id and name=#name#;
+        SELECT id from `school` where name=#name#;
     </select>
 </sqlMap>
